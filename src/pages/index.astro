@@ -1,16 +1,44 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ThemeCards from "../components/ThemeCards.astro";
+import WhyParticipate from "../components/WhyParticipate.astro";
+import WhatYouWillDo from "../components/WhatYouWillDo.astro";
+import BigCTA from "../components/BigCTA.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="FOSSEE OSHW Hackathon 2026">
+  <Navbar />
+
+  <main>
+    <Hero />
+ <SectionTitle id="about" title="OPEN SOURCE • REAL HARDWARE • REAL IMPACT" />
+    <section id="themes" class="py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <SectionTitle id="themesTitle" title="Hackathon Themes" />
+        <ThemeCards />
+      </div>
+    </section>
+
+    <section id="why" class="py-12 bg-slate-50 border-y border-slate-200">
+      <div class="max-w-6xl mx-auto px-6">
+        <SectionTitle id="whyTitle" title="Why Participate?" />
+        <WhyParticipate />
+      </div>
+    </section>
+
+    <section id="what" class="py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <SectionTitle id="stepsTitle" title="What You Will Do" />
+        <WhatYouWillDo />
+      </div>
+    </section>
+
+    <BigCTA />
+  </main>
+
+  <Footer />
+</Layout>

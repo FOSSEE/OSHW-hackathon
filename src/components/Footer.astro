@@ -1,0 +1,50 @@
+---
+const socials = [
+  { label: "Facebook", href: "#", icon: "f", class: "bg-blue-500" },
+  { label: "Twitter", href: "#", icon: "t", class: "bg-sky-500" },
+  { label: "LinkedIn", href: "#", icon: "in", class: "bg-blue-700" },
+];
+---
+
+<footer class="border-t border-slate-200 bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between">
+      <div class="flex items-center gap-8 text-sm text-slate-600">
+        <div class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded bg-sky-500/90 text-white grid place-items-center text-xs font-bold">
+            F
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide">Powered by</div>
+            <div class="font-semibold text-slate-800">FOSSEE</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-full border border-slate-300 text-slate-700 grid place-items-center text-[10px] font-semibold">
+            IIT
+          </div>
+          <div>
+            <div class="text-xs uppercase tracking-wide">An initiative of</div>
+            <div class="font-semibold text-slate-800">IIT Bombay</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        {socials.map((s) => (
+          <a
+            href={s.href}
+            aria-label={s.label}
+            class={`h-9 w-9 rounded-full text-white grid place-items-center text-sm font-semibold ${s.class}`}
+          >
+            {s.icon}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-xs text-slate-500">
+      © 2026 FOSSEE OSHW Hackathon. All rights reserved.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,38 @@
+---
+const themes = [
+  {
+    title: "Healthcare & Assistive Devices",
+    icon: "❤️",
+    bullets: ["Low-cost Diagnostics", "Wearable Health Tech", "Assistive Solutions"],
+  },
+  {
+    title: "Energy & Sustainability",
+    icon: "⚡",
+    bullets: ["Renewable Energy", "Smart Meters & Audits", "Power Efficiency"],
+  },
+  {
+    title: "Smart Campus / Smart City",
+    icon: "🏙️",
+    bullets: ["Air Quality Monitoring", "Energy Management", "Safety & Accessibility"],
+  },
+];
+---
+
+<div class="grid gap-6 md:grid-cols-3">
+  {themes.map((t) => (
+    <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+      <div class="text-3xl mb-3 text-center">{t.icon}</div>
+      <h3 class="font-semibold text-slate-800 text-center">{t.title}</h3>
+      <ul class="mt-4 space-y-2 text-sm text-slate-600">
+        {t.bullets.map((b) => (
+          <li class="flex items-start gap-2">
+            <svg class="mt-0.5 h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
