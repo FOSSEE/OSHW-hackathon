@@ -7,10 +7,10 @@ const steps = [
 ];
 ---
 
-<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
   {steps.map((step) => (
     <div class="rounded-lg border border-slate-200 bg-white p-5 text-center shadow-sm">
-      <div class="text-3xl mb-3">{step.icon}</div>
+      <div class="text-3xl mb-3">{step.icon ?? null}</div>
       <div class="text-sm font-semibold text-slate-700">{step.title}</div>
     </div>
   ))}

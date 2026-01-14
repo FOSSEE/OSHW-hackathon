@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Healthcare">
+  <rect width="256" height="256" rx="32" fill="#F4FAFF"/>
+  <circle cx="196" cy="68" r="16" fill="#E2ECF7"/>
+  <rect x="108" y="52" width="40" height="152" rx="10" fill="#E53E3E"/>
+  <rect x="52" y="108" width="152" height="40" rx="10" fill="#E53E3E"/>
+  <circle cx="76" cy="180" r="18" fill="#FDE8E8"/>
+  <circle cx="180" cy="180" r="10" fill="#F9CACA"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Energy">
+  <rect width="256" height="256" rx="32" fill="#FFF6DB"/>
+  <circle cx="70" cy="66" r="20" fill="#FFE6A7"/>
+  <polygon points="146 40 92 136 130 136 118 216 196 108 156 108" fill="#F59E0B"/>
+  <rect x="48" y="176" width="60" height="16" rx="8" fill="#FDE68A"/>
+</svg>

@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
+
 import Hero from "../components/Hero.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import ThemeCards from "../components/ThemeCards.astro";
@@ -10,15 +10,34 @@ import BigCTA from "../components/BigCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="FOSSEE OSHW Hackathon 2026">
-  <Navbar />
+<Layout title="FOSSEE OSHW Hackathon 2026" navPosition="fixed">
+
 
   <main>
     <Hero />
- <SectionTitle id="about" title="OPEN SOURCE • REAL HARDWARE • REAL IMPACT" />
-    <section id="themes" class="py-12">
+      <section id="about" class="py-12">
       <div class="max-w-6xl mx-auto px-6">
-        <SectionTitle id="themesTitle" title="Hackathon Themes" />
+ <SectionTitle id="abouttitle" title="OPEN SOURCE • REAL HARDWARE • REAL IMPACT" />
+ <div class=" rounded-3xl bg-linear-to-b from-slate-50 to-white p-8 ring-1 ring-slate-200">
+
+  <p class="mt-4 text-lg leading-8 text-slate-700">
+    The <span class="font-semibold text-slate-900">FOSSEE OSHW Hackathon 2026</span> invites students from across the world to
+    design, build, and document open-source hardware solutions addressing real
+    societal challenges, with a strong focus on India’s sustainability priorities
+    and global development goals.
+  </p>
+
+  <p class="mt-4 text-lg leading-8 text-slate-700">
+    This is a <span class="font-semibold text-slate-900">month-long innovation journey</span>—from problem understanding to working
+    hardware prototypes.
+  </p>
+</div>
+
+    </div>
+    </section>
+    <section id="themes" class="py-12">
+      <div class="max-w-auto mx-auto px-6">
+        <SectionTitle id="themesTitle" title="HACKATHON THEMES & SDG ALIGNMENT" />
         <ThemeCards />
       </div>
     </section>
@@ -30,10 +49,68 @@ import Footer from "../components/Footer.astro";
       </div>
     </section>
 
-    <section id="what" class="py-12">
+    <section id="focus" class="py-12">
       <div class="max-w-6xl mx-auto px-6">
-        <SectionTitle id="stepsTitle" title="What You Will Do" />
-        <WhatYouWillDo />
+        <SectionTitle id="focusTitle" title="INDIA & GLOBAL SUSTAINABILITY FOCUS" />
+        <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+          <p class="text-lg font-semibold text-slate-800">The hackathon supports:</p>
+          <ul class="mt-4 space-y-2 text-base text-slate-700">
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span>Sustainable Development Goals (SDGs)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span>Climate Action &amp; Adaptation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span>Digital Public Infrastructure</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
+              <span>Affordable &amp; Open Innovation</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-base leading-7 text-slate-700">
+            Participants are encouraged to build deploy-able, scalable, and reproducible solutions
+            suitable for real-world conditions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12">
+      <div class="max-w-auto mx-auto px-6">
+        <div class="grid gap-10 md:grid-cols-2">
+          <div id="what">
+            <SectionTitle id="stepsTitle" title="What You Will Do" />
+            <WhatYouWillDo />
+          </div>
+          <div id="participate">
+            <SectionTitle id="participateTitle" title="WHO CAN PARTICIPATE?" />
+            <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+              <ul class="space-y-2 text-base text-slate-700">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
+                  <span>Undergraduate &amp; Postgraduate students</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
+                  <span>Polytechnic &amp; technical institute students</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
+                  <span>Makers, innovation clubs &amp; interdisciplinary teams</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
+                  <span>Global participation welcome</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -1,42 +1,231 @@
-<nav id="site-nav" class="fixed top-0 inset-x-0 z-50 bg-transparent text-white transition-all duration-300">
+---
+import fos from "../images/fossee-logo.png";
+import iit from "../images/IITB-logo.png";
+
+const { position = "fixed" } = Astro.props;
+const isOverlay = position === "fixed";
+const positionClass =
+  position === "fixed"
+    ? "fixed top-0 inset-x-0"
+    : position === "sticky"
+      ? "sticky top-0"
+      : "relative";
+const navClass = [
+  positionClass,
+  "z-50 w-full transition-all duration-300",
+  isOverlay
+    ? "bg-transparent text-white"
+    : "bg-white/95 text-slate-900 shadow-sm border-b border-slate-200 backdrop-blur",
+].join(" ");
+const toggleClass = [
+  "inline-flex items-center justify-center rounded-md border p-2 transition focus:outline-none focus:ring-2 focus:ring-orange-500/40",
+  isOverlay
+    ? "text-white border-white/30 bg-white/10 hover:bg-white/20"
+    : "text-slate-700 border-slate-200 bg-white hover:bg-slate-50",
+].join(" ");
+const linkClass =
+  "text-base font-medium text-current opacity-90 hover:opacity-100 transition whitespace-nowrap";
+const mobileLinkClass =
+  "block px-5 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 transition";
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#themes", label: "Themes" },
+  // { href: "/temp", label: "Temp" },
+];
+---
+
+<nav id="site-nav" class={navClass} data-overlay={isOverlay ? "true" : "false"}>
   <div class="max-w-7xl mx-auto px-6">
-    <div class="h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-2">
-          <div class="h-8 w-8 rounded bg-sky-500/90 text-white grid place-items-center text-xs font-bold">
-     
-          </div>
-       
-        </div>
-        <span class="opacity-60">|</span>
-        <div class="flex items-center gap-2">
-          <div class="h-8 w-8 rounded-full border border-current text-current grid place-items-center text-[10px] font-semibold opacity-80">
-            IIT
-          </div>
-         
-        </div>
+    <div class="h-16 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4 ">
+        <!-- IIT Bombay -->
+        <img
+          src={iit.src}
+          alt="IIT Bombay"
+          class="h-12 w-auto md:h-16"
+          loading="lazy"
+          decoding="async"
+        />
+
+        <span class="hidden text-sm text-slate-400 sm:inline">|</span>
+
+        <!-- FOSSEE -->
+        <img
+          src={fos.src}
+          alt="FOSSEE"
+          class="h-12 w-auto md:h-16"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
-      <div class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#home" class="text-current opacity-90 hover:opacity-100 transition">Home</a>
-        <a href="#themes" class="text-current opacity-90 hover:opacity-100 transition">Themes</a>
-        <a href="#why" class="text-current opacity-90 hover:opacity-100 transition">About</a>
+      <div class="hidden md:flex items-center gap-8">
+        {
+          navItems.map((item) => (
+            <a href={item.href} class={linkClass} data-nav-link={item.href}>
+              {item.label}
+            </a>
+          ))
+        }
       </div>
 
-      <a
-        href="#register"
-        class="rounded-md bg-orange-500 px-4 py-2 text-white font-semibold shadow-sm hover:bg-orange-600 transition"
+      <div class="hidden md:flex items-center">
+        <a
+          href="#register"
+          class="rounded-md bg-orange-500 px-4 py-2 text-white font-semibold shadow-sm hover:bg-orange-600 transition"
+        >
+          Register Now
+        </a>
+      </div>
+
+      <button
+        id="nav-toggle"
+        class={`md:hidden ${toggleClass}`}
+        type="button"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        Register Now
-      </a>
+        <svg
+          class="h-5 w-5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div
+        class="mt-3 rounded-2xl bg-white text-slate-900 shadow-lg ring-1 ring-slate-200/70"
+      >
+        {
+          navItems.map((item, index) => (
+            <a
+              href={item.href}
+              class={`${mobileLinkClass} ${
+                index === 0 ? "rounded-t-2xl" : "border-t border-slate-200/70"
+              }`}
+              data-nav-close
+              data-nav-link={item.href}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+        <a
+          href="#register"
+          class="block px-5 py-3 text-base font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-b-2xl transition"
+          data-nav-close
+        >
+          Register Now
+        </a>
+      </div>
     </div>
   </div>
 </nav>
 
 <script>
   const nav = document.getElementById("site-nav");
+  const navToggle = document.getElementById("nav-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = nav?.dataset.overlay === "true";
+
+  const closeMenu = () => {
+    if (!mobileMenu || !navToggle) return;
+    mobileMenu.classList.add("hidden");
+    navToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const toggleMenu = () => {
+    if (!mobileMenu || !navToggle) return;
+    const isOpen = !mobileMenu.classList.contains("hidden");
+    if (isOpen) {
+      closeMenu();
+    } else {
+      mobileMenu.classList.remove("hidden");
+      navToggle.setAttribute("aria-expanded", "true");
+    }
+  };
+
+  navToggle?.addEventListener("click", toggleMenu);
+  document.querySelectorAll("[data-nav-close]").forEach((item) => {
+    item.addEventListener("click", closeMenu);
+  });
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) closeMenu();
+  });
+
+  const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+  const linkData = navLinks.map((link) => {
+    const href = link.getAttribute("href") || "";
+    const url = new URL(href, window.location.origin);
+    return { link, path: url.pathname, hash: url.hash };
+  });
+
+  const setActiveByKey = (key: string) => {
+    linkData.forEach(({ link, path, hash }) => {
+      const linkKey = `${path}${hash}`;
+      const isActive = linkKey === key;
+      link.classList.toggle("font-semibold", isActive);
+      link.classList.toggle("opacity-100", isActive);
+      link.classList.toggle("text-sky-400", isActive);
+    });
+  };
+
+  const setActiveLink = () => {
+    const currentPath = window.location.pathname;
+    const sections = linkData
+      .filter(({ path, hash }) => path === currentPath && hash)
+      .map(({ hash }) => ({
+        hash,
+        element: document.querySelector(hash) as HTMLElement | null,
+      }))
+      .filter(({ element }) => element);
+
+    let activeKey = `${currentPath}${window.location.hash}`;
+    if (sections.length) {
+      const scrollPosition = window.scrollY + 120;
+      activeKey = currentPath;
+      sections.forEach(({ hash, element }) => {
+        if (element && element.offsetTop <= scrollPosition) {
+          activeKey = `${currentPath}${hash}`;
+        }
+      });
+    }
+    setActiveByKey(activeKey || currentPath);
+  };
+
+  const setToggleTone = (scrolled) => {
+    if (!navToggle || !overlay) return;
+    if (scrolled) {
+      navToggle.classList.add("text-slate-700", "border-slate-200", "bg-white");
+      navToggle.classList.remove(
+        "text-white",
+        "border-white/30",
+        "bg-white/10",
+      );
+    } else {
+      navToggle.classList.add("text-white", "border-white/30", "bg-white/10");
+      navToggle.classList.remove(
+        "text-slate-700",
+        "border-slate-200",
+        "bg-white",
+      );
+    }
+  };
+
   const setNav = () => {
-    if (!nav) return;
+    if (!nav || !overlay) return;
     const scrolled = window.scrollY > 40;
     if (scrolled) {
       nav.classList.add(
@@ -45,7 +234,7 @@
         "shadow-sm",
         "border-b",
         "border-slate-200",
-        "text-slate-900"
+        "text-slate-900",
       );
       nav.classList.remove("bg-transparent", "text-white");
     } else {
@@ -56,10 +245,17 @@
         "shadow-sm",
         "border-b",
         "border-slate-200",
-        "text-slate-900"
+        "text-slate-900",
       );
     }
+    setToggleTone(scrolled);
   };
-  window.addEventListener("scroll", setNav, { passive: true });
-  setNav();
+  if (overlay) {
+    window.addEventListener("scroll", setNav, { passive: true });
+    setNav();
+  }
+
+  window.addEventListener("scroll", setActiveLink, { passive: true });
+  window.addEventListener("hashchange", setActiveLink);
+  setActiveLink();
 </script>

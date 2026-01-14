@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
-const { title = "FOSSEE OSHW Hackathon 2026" } = Astro.props;
+import Navbar from "../components/Navbar.astro";
+const { title = "FOSSEE OSHW Hackathon 2026", navPosition = "sticky" } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +19,7 @@ const { title = "FOSSEE OSHW Hackathon 2026" } = Astro.props;
     />
   </head>
   <body class="bg-white text-slate-800 antialiased">
+    <Navbar position={navPosition} />
     <slot />
   </body>
 </html>
