@@ -1,6 +1,7 @@
 ---
 import fos from "../images/fossee-logo.png";
 import iit from "../images/IITB-logo.png";
+import facebook from "../images/Facebook_Logo_Primary.png"
 
 const socials = [
   {
@@ -27,18 +28,18 @@ const socials = [
     icon: "youtube",
     class: "bg-red-600",
   },
-  {
-    label: "GitHub",
-    href: "https://github.com/orgs/FOSSEE/dashboard",
-    icon: "github",
-    class: "bg-slate-800",
-  },
+  // {
+  //   label: "GitHub",
+  //   href: "https://github.com/orgs/FOSSEE/dashboard",
+  //   icon: "github",
+  //   class: "bg-slate-800",
+  // },
 ];
 
 
 const socialIcons = {
   facebook:
-    "M18 8a6 6 0 00-6 6v3H9v4h3v6h4v-6h3l1-4h-4v-2a2 2 0 012-2h2V8h-2z",
+    "M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z",
 
   instagram:
     "M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z",
@@ -59,19 +60,7 @@ const socialIcons = {
   <div class="max-w-6xl mx-auto px-6 py-10">
     <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between">
       <div class="flex flex-wrap items-center gap-8 text-sm text-slate-600">
-        <div class="flex items-center gap-3">
-          <img
-            src={fos.src}
-            alt="FOSSEE"
-            class="h-10 w-auto"
-            loading="lazy"
-            decoding="async"
-          />
-          <div>
-            <div class="text-xs uppercase tracking-wide">Powered by</div>
-            <div class="font-semibold text-slate-800">FOSSEE</div>
-          </div>
-        </div>
+        
         <div class="flex items-center gap-3">
           <img
             src={iit.src}
@@ -83,6 +72,19 @@ const socialIcons = {
           <div>
             <div class="text-xs uppercase tracking-wide">An initiative of</div>
             <div class="font-semibold text-slate-800">IIT Bombay</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            src={fos.src}
+            alt="FOSSEE"
+            class="h-10 w-auto"
+            loading="lazy"
+            decoding="async"
+          />
+          <div>
+            <div class="text-xs uppercase tracking-wide">Powered by</div>
+            <div class="font-semibold text-slate-800">FOSSEE</div>
           </div>
         </div>
       </div>

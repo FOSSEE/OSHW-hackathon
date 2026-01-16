@@ -1,38 +1,123 @@
-<section
-  id="home"
-  class="relative min-h-screen flex items-center justify-center text-left bg-cover bg-center"
-  style="background-image: url('/hero.png');"
->
-  <!-- <div class="absolute inset-0 bg-slate-900/60"></div> -->
+<section id="home" class="relative min-h-screen overflow-hidden">
+  <!-- Background layer -->
+  <!-- <div
+    class="absolute inset-0 bg-center bg-no-repeat bg-[length:120%]"
+    style="background-image: url('/hero.png');"
+  ></div> -->
+  <img
+  src="/hero.png"
+  class="absolute inset-0 w-full h-full object-cover scale-110"
+/>
 
-  <div class="relative z-10  px-6 py-20 text-white">
-    <h1 class="text-3xl md:text-8xl font-bold">
-      <p class="text-sky-300">FOSSEE OSHW</p> Hackathon 2026
-    </h1>
-    <p class="mt-3 text-lg md:text-xl italic text-white">
-      Build Open Hardware for a Sustainable & Inclusive Future
-    </p>
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-slate-900/60"></div>
 
-      16 February – 16 March 2026 
-    </p>
-      <p class="text-sm md:text-base text-white">
-Global Student Hackathon | Open Source Hardware
-</p>
-    <p class="mt-4 text-sm md:text-base text-white">
-      Organised by the FOSSEE Project funded my Ministry of Education.
+  <!-- HERO CONTENT -->
+  <div class="relative min-h-screen flex flex-col justify-between px-6 py-12">
+
+    <!-- CENTER TITLE -->
+    <div class="flex flex-1 items-center justify-center text-center">
+     <!-- <h1 class="text-7xl md:text-9xl font-black text-white leading-none">
+  <span class="block md:inline-block text-sky-400 drop-shadow-lg">
+    FOSSEE OSHW
+  </span>
+  <span class="">
+    Hackathon <span class="text-sky-400">2026</span>
+  </span>
+</h1> -->
+<h1 class="text-7xl md:text-9xl font-black leading-none text-center">
+  <span id="part1" class="text-sky-400 drop-shadow-lg"></span><br />
+  <span id="part2" class="text-white"></span>
+  <span id="part3" class="text-sky-400"></span>
+  <span class="text-sky-400 animate-pulse"></span>
+</h1>
+
+
+    </div>
+
    
-   </p>
-      <a
-      id="register"
-      href="#"
-      class="inline-flex mt-8 items-center justify-center rounded-md bg-orange-500 px-8 py-3 text-white font-semibold shadow hover:bg-orange-600 transition"
-    >
-      Register Now
-    </a>
 
-    <p class="mt-10 text-sm md:text-base text-white/90">
-      Join students from around the world to design, build, and innovate with
-      <span class="font-semibold text-white"> Open Source Hardware!</span>
-    </p>
   </div>
 </section>
+
+ <!-- BOTTOM CONTENT -->
+    <div class="flex justify-center mt-5 pt-5">
+      <div
+        class="bg-white/10 backdrop-blur-lg shadow-lg rounded-3xl p-6
+               w-full max-w-5xl text-black"
+      >
+        <p class="text-lg md:text-xl text-center">
+          Build Open Hardware for a Sustainable & Inclusive Future
+        </p>
+
+        <p class="mt-3 text-sky-600 font-bold text-lg md:text-3xl text-center">
+          16 February – 16 March 2026
+        </p>
+
+        <p class=" text-sm md:text-xl text-center">
+          Global Student Hackathon | Open Source Hardware
+        </p>
+
+        <p class="mt-4 text-sm md:text-xl text-center">
+          Organised by the FOSSEE Project funded by Ministry of Education.
+        </p>
+
+        <!-- <div class="mt-6 flex justify-center">
+          <a
+            id="register"
+            href="#"
+            class="inline-flex items-center justify-center rounded-md
+                   bg-orange-500 px-8 py-3 text-white font-semibold shadow
+                   hover:bg-orange-600 transition"
+          >
+            Register Now
+          </a>
+        </div> -->
+
+        <p class="mt-6 text-sm md:text-lg italic text-black/90 text-center">
+          <mark class="bg-transparent text-black">
+            Join students from around the world to design, build, and innovate
+            with <span class="font-semibold">Open Source Hardware!</span>
+          </mark>
+        </p>
+      </div>
+    </div>
+
+<script>
+  const parts = [
+    { id: "part1", text: "FOSSEE OSHW" },
+    { id: "part2", text: "Hackathon " },
+    { id: "part3", text: "2026" }
+  ];
+
+  const speed = 95;
+  let partIndex = 0;
+  let charIndex = 0;
+
+  function typeSegments() {
+    if (partIndex >= parts.length) return;
+
+    const el = document.getElementById(parts[partIndex].id);
+
+    if (charIndex < parts[partIndex].text.length) {
+      el.textContent += parts[partIndex].text.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeSegments, speed);
+    } else {
+      partIndex++;
+      charIndex = 0;
+      setTimeout(typeSegments, 200);
+    }
+  }
+
+  window.addEventListener("load", () => {
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      typeSegments();
+    } else {
+      parts.forEach(p => {
+        document.getElementById(p.id).textContent = p.text;
+      });
+    }
+  });
+</script>
+

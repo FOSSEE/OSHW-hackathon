@@ -37,13 +37,13 @@ const navItems = [
 
 <nav id="site-nav" class={navClass} data-overlay={isOverlay ? "true" : "false"}>
   <div class="max-w-7xl mx-auto px-6">
-    <div class="h-16 flex items-center justify-between gap-4">
+    <div class="h-18 flex items-center justify-between gap-4">
       <div class="flex items-center gap-4 ">
         <!-- IIT Bombay -->
         <img
           src={iit.src}
           alt="IIT Bombay"
-          class="h-12 w-auto md:h-16"
+          class="h-12 w-auto md:h-18 bg-white"
           loading="lazy"
           decoding="async"
         />
@@ -54,7 +54,7 @@ const navItems = [
         <img
           src={fos.src}
           alt="FOSSEE"
-          class="h-12 w-auto md:h-16"
+          class="h-12 w-auto md:h-20"
           loading="lazy"
           decoding="async"
         />
@@ -72,7 +72,7 @@ const navItems = [
 
       <div class="hidden md:flex items-center">
         <a
-          href="#register"
+          href="/#register"
           class="rounded-md bg-orange-500 px-4 py-2 text-white font-semibold shadow-sm hover:bg-orange-600 transition"
         >
           Register Now
