@@ -1,11 +1,13 @@
 ---
 import fos from "../images/fossee-logo.png";
 import iit from "../images/IITBLogo.png";
+import eduPyramid from "../images/edu_pyramid.png";
+import spokenLogo from "../images/spoken-logo.png";
 
 
 const { overlay = false } = Astro.props;
 const barClass = [
-  "relative z-50 w-full transition-all duration-300 backdrop-blur-sm",
+  "relative z-50 w-full transition-all duration-300 ",
   overlay
     ? "bg-transparent text-white"
     : "bg-transparent text-slate-900 border-b border-slate-200",
@@ -19,7 +21,7 @@ const iitBadgeClass = [
 
 <div id="logo-bar" class={barClass} data-overlay={overlay ? "true" : "false"}>
   <div class="max-w-9xl mx-auto px-6 py-3">
-   <div class="flex flex-col items-start gap-4 sm:flex-row sm:justify-start md:justify-start">
+   <div class="grid grid-cols-2 place-items-center gap-4 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
       <!-- IIT Bombay -->
       <div class="flex items-center gap-3">
         <img
@@ -42,6 +44,28 @@ const iitBadgeClass = [
         src={fos.src}
         alt="FOSSEE"
         class="h-12 w-auto md:h-24"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <span class={`hidden text-sm sm:inline ${dividerClass}`}>|</span>
+
+      <!-- Education Pyramid -->
+      <img
+        src={eduPyramid.src}
+        alt="Education Pyramid"
+        class="h-10 w-auto md:h-16"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <span class={`hidden text-sm sm:inline ${dividerClass}`}>|</span>
+
+      <!-- Spoken Tutorial -->
+      <img
+        src={spokenLogo.src}
+        alt="Spoken Tutorial"
+        class="h-10 w-auto md:h-16"
         loading="lazy"
         decoding="async"
       />
