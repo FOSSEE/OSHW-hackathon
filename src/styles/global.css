@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap");
 @import "tailwindcss";
 
 html {
@@ -5,7 +6,7 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
   background: white;
   color: black;
 }
