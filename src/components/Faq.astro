@@ -1,0 +1,110 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+import { Fragment } from "astro/jsx-runtime";
+
+const faqs = [
+  {
+    question: "What are the themes of the hackathon?",
+     points: [
+      "Healthcare & Assistive Devices",
+      "Energy & Sustainability",
+      "Smart Campus / Smart City",
+    ],
+    note: "Each participant or team may register under only one theme.",
+   },
+  {
+    question: "What type of projects are expected?",
+    answer:
+      "Participants are expected to work on open-source hardware-based projects that are practical, innovative, and socially relevant. Projects should be designed with reproducibility and real-world applicability in mind."
+  },
+  {
+    question: "Is the use of open-source tools mandatory?",
+    answer:
+      "Yes. All projects must use Open Source Hardware platforms and Free/Libre Open Source Software (FLOSS) tools wherever applicable. Proper attribution must be provided for any third-party open-source components used."
+  },
+  {
+    question: "Is there any specific hardware that must be used for the hackathon?",
+    answer:
+      "No. There is no restriction on the choice of hardware. Participants are free to use any hardware platform of their choice, provided it aligns with the selected theme and follows open-source principles. All submissions must include complete documentation such as circuit schematics, Bill of Materials (if applicable), and working firmware/software code. All documentation and code must be released under the Creative Commons Attribution–ShareAlike 4.0 International (CC BY-SA 4.0) license."
+  },
+  {
+    question: "Is there any registration fee?",
+    answer:
+      "No. Participation in the FOSSEE OSHW Hackathon 2026 is free of cost."
+  },
+  {
+    question: "How do participants register?",
+    answer:
+      "Participants must register through the official registration form available on the FOSSEE website. All communication will be sent to the registered email address."
+  },
+  {
+    question: "How will the projects be evaluated?",
+    answer:
+      "Projects will be evaluated by a panel appointed by the organizers based on relevance to the selected theme, technical correctness, innovation and societal impact, quality of documentation, and adherence to open-source principles. The decision of the evaluation panel will be final."
+  },
+  {
+    question: "Will participants receive certificates?",
+    answer:
+      "Yes. Certificates of participation will be issued to participants who successfully register and submit a valid project as per the guidelines. Additional recognition may be provided for selected projects."
+  },
+  {
+    question: "Will mentoring or guidance be provided?",
+    answer:
+      "Details regarding orientation sessions, mentoring, or guidance (if any) will be communicated to registered participants through official channels."
+  },
+  {
+    question: "Who should be contacted for queries?",
+    answer:
+      "Participants are advised to refer to the official contact details provided on the FOSSEE website for any queries related to registration or participation. Email ID - contact-oshw@fossee.in"
+  }
+];
+---
+
+<!-- <section id="faq" class="py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <SectionTitle id="faqTitle" title="FAQ" />
+    <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+      <div class="space-y-6 text-sm md:text-md leading-7 text-slate-700">
+        {faqs.map((item) => (
+          <div>
+            <p class="font-semibold text-slate-900">{item.question}</p>
+            <p class="mt-2">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section> -->
+<section id="faq" class="py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <SectionTitle title="FAQ" />
+
+    <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+      <ol class="space-y-6 list-decimal pl-5 text-black leading-7">
+        {faqs.map((item, index) => (
+          <li key={index}>
+            <p class="font-semibold text-black">
+              {item.question}
+            </p>
+
+            {item.answer && (
+              <p class="mt-2">{item.answer}</p>
+            )}
+
+            {item.points && (
+              <ul class="list-disc pl-6 mt-2">
+                {item.points.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+            )}
+
+            {item.note && (
+              <p class="mt-2">{item.note}</p>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
