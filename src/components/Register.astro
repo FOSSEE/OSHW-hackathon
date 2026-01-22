@@ -7,8 +7,10 @@
     </h3>
     <div class="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSepEvOMcCOpf0cG3-dK9XiTgLqF_bQW_0Qc5R7GfO47R1dYJA/viewform?usp=publish-editor" id="register"
-        class="inline-flex items-center justify-center rounded-md bg-orange-500 px-8 py-3 text-white font-semibold shadow hover:bg-orange-600 transition"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSepEvOMcCOpf0cG3-dK9XiTgLqF_bQW_0Qc5R7GfO47R1dYJA/viewform?usp=publish-editor"
+        id="register"
+        class="btn-grad"
+        target="_blank"
       >
         Register Now
       </a>
@@ -22,3 +24,30 @@
     </div>
   </div>
 </section>
+
+<style>
+  .btn-grad {
+    background-image: linear-gradient(
+      to right,
+      #314755 0%,
+      #26a0da 51%,
+      #314755 100%
+    );
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+</style>

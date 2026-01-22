@@ -1,14 +1,10 @@
----
-
----
-
 <section id="home" class="relative min-h-screen overflow-hidden -mt-[var(--header-height)]">
   <!-- Background layer -->
   <!-- <div
     class="absolute inset-0 bg-center bg-no-repeat bg-[length:120%]"
     style="background-image: url('/hero.png');"
   ></div> -->
-  <img
+<img
   src="/oshw_webpage_background.png"
   class="absolute inset-0 w-full h-full object-cover  "
 />
@@ -43,26 +39,23 @@
    <!-- BOTTOM CONTENT -->
     <div class="flex justify-center mt-5 pt-5">
       <div
-        class="bg-white/10 backdrop-blur-lg shadow-lg rounded-3xl p-6
+        class="bg-white/10 backdrop-blur-lg font-semibold shadow-lg rounded-3xl p-6
                w-full max-w-5xl text-white"
       >
         <p class="text-sm md:text-xl text-center">
           Build Open Source Hardware for a Sustainable & Inclusive Future
         </p>
 
-        <p class="mt-1 text-sky-600 font-bold text-lg md:text-3xl text-center">
+        <p class="mt-1 text-sky-400 font-bold text-lg md:text-3xl text-center">
           16 February – 16 March 2026
         </p>
 <div class="my-2 py-2 flex flex-1 items-center justify-center">
-          <a
-            href="/#register"
-            class="rounded-md bg-orange-500 px-4 py-2 text-white font-semibold shadow-sm hover:bg-orange-600 transition"
-          >
+          <a href="#register" class="btn-grad">
             Register Now
           </a>
         </div>
         <p class=" text-sm md:text-xl text-center">
-          Global Student Hackathon | Open Source Hardware
+          Global Hackathon | Open Source Hardware
         </p>
 
         <p class="mt-1 text-sm md:text-xl text-center">
@@ -93,10 +86,37 @@
   </div>
 </section>
 
+<style>
+  .btn-grad {
+    background-image: linear-gradient(
+      to right,
+      #314755 0%,
+      #26a0da 51%,
+      #314755 100%
+    );
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #fff;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
+
  
 <script>
   const parts = [
-    { id: "part1", text: "FOSSEE OSHW" },
+    { id: "part1", text: "FOSSEE Open Source Hardware" },
     { id: "part2", text: "Hackathon " },
     { id: "part3", text: "2026" }
   ];

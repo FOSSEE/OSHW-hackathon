@@ -22,7 +22,7 @@ const overlayHeader = headerOverlay || isFixedHeader;
     <title>{title}</title>
   </head>
   <body class="bg-white text-black [--logo-bar-height:88px] [--nav-height:72px] [--header-height:calc(var(--logo-bar-height)+var(--nav-height))] md:[--logo-bar-height:120px] md:[--header-height:calc(var(--logo-bar-height)+var(--nav-height))]">
-    <LogoBar overlay={overlayHeader} />
+    <LogoBar />
     <Navbar
       position={navPosition}
       overlay={overlayHeader}
