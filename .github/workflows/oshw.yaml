@@ -1,0 +1,21 @@
+
+name: OS HW
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  build:
+    runs-on: oshw-run
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      - name: Install, build, and upload your site
+        uses: withastro/action@v2
+      - name: Create folder
+        run: |
+          mkdir -p /home/github/Assets/oshw26.fossee.in/prod && cp -R dist /home/github/Assets/oshw26.fossee.in/prod
