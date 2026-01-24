@@ -2,6 +2,7 @@
 import healthcareImage from "../images/healthcare_2966486.png";
 import energyImage from "../images/eco-friendly_16517716.png";
 import cityImage from "../images/smart-city_3253488.png";
+import SectionTitle from "./SectionTitle.astro";
 
 const themes = [
   {
@@ -44,8 +45,10 @@ const themes = [
   },
 ];
 ---
-
-<div class="grid gap-6 md:grid-cols-3">
+<section id="themes" class="py-12 scroll-pt-18 scroll-mt-18">
+  <div class="max-w-6xl mx-auto px-6">
+<SectionTitle id="themesTitle" title="HACKATHON THEMES & SDG ALIGNMENT" />
+<div id="theme" class="grid gap-6 md:grid-cols-3 pt-6 mt-6">
   {themes.map((t) => (
     <div class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
       <div class="mb-3 flex justify-center">
@@ -76,3 +79,5 @@ const themes = [
     </div>
   ))}
 </div>
+</div>
+</section>
