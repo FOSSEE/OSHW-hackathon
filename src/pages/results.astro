@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import {
+  championHtml,
+  winnersHtml,
+  notableHtml,
+  participationHtml,
+} from "../data/resulttable.js";
+
+const tabs = [
+  {
+    id: "tab-0",
+    label: "Champion",
+    html: championHtml,
+  },
+  {
+    id: "tab-1",
+    label: "Winners",
+    html: winnersHtml,
+  },
+  {
+    id: "tab-2",
+    label: "Notable Contributions",
+    html: notableHtml,
+  },
+  {
+    id: "tab-3",
+    label: "Participation",
+    html: participationHtml,
+  },
+];
+---
+
+<Layout title="Results | FOSSEE OSHW Hackathon 2026">
+  <main>
+    <section id="results" class="py-12 bg-slate-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <SectionTitle id="abouttitle" title="Results" />
+
+        <div class="results-tabs tabs">
+          {
+            tabs.map((tab, index) => (
+              <div
+                class={`tab ${index === 0 ? "active" : ""}`}
+                data-tab={index}
+              >
+                {tab.label}
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="tab-content">
+          {
+            tabs.map((tab, index) => (
+              <div
+                class={`tab-panel ${index === 0 ? "active" : ""}`}
+                id={tab.id}
+              >
+                <div class="results-table-shell overflow-x-auto mt-5 pt-5 pb-5 mb-5 text-sm md:text-base leading-7">
+                  <Fragment set:html={tab.html} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style is:global>
+  .results-table-shell table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: none;
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  .results-table-shell a {
+    color: #4e6e8a;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+  }
+
+  .results-table-shell a:hover {
+    background-color: #4e6e8a;
+    color: white;
+  }
+
+  .results-table-shell a:active {
+    background-color: #4e6e8a;
+  }
+
+  .results-table-shell tr,
+  .results-table-shell th,
+  .results-table-shell td {
+    border: 2px solid #4e6e8a;
+    padding: 5px;
+  }
+
+  .results-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+    cursor: pointer;
+  }
+
+  .results-tabs .tab {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+  }
+
+  .results-tabs .tab:hover {
+    background: #4e6e8a;
+    color: white;
+  }
+
+  .results-tabs .tab.active {
+    background: #4e6e8a;
+    color: white;
+    font-weight: bold;
+  }
+
+  .tab-content {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: #fff;
+  }
+
+  .tab-content > div {
+    display: none;
+  }
+
+  .tab-content > div.active {
+    display: block;
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const activeTab = document.querySelector(".tab.active");
+      const activePanel = document.querySelector(".tab-panel.active");
+
+      if (activeTab) {
+        activeTab.classList.remove("active");
+      }
+
+      if (activePanel) {
+        activePanel.classList.remove("active");
+      }
+
+      tab.classList.add("active");
+      const tabIndex = tab.getAttribute("data-tab");
+      const targetPanel = document.getElementById(`tab-${tabIndex}`);
+
+      if (targetPanel) {
+        targetPanel.classList.add("active");
+      }
+    });
+  });
+</script>
