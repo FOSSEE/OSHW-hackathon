@@ -1,2597 +1,2394 @@
-export const headers = [
+const headers = [
   "Theme",
   "Student Name",
   "Institute Name",
   "City",
-  "State"
+  "State",
 ];
 
-export const champions = [
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "DHAVALA ESWAR PAVAN TEJA",
-    {
-      "content": "RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES - NUZVID",
-      "rowspan": 4
-    },
-    {
-      "content": "POLAVARAM",
-      "rowspan": 4
-    },
-    {
-      "content": "ANDRA PRADESH",
-      "rowspan": 4
-    }
-  ],
-  [
-    "CHAPPATI TANUJA SRILAKSHMI"
-  ],
-  [
-    "MALISETTY AISHWARYA"
-  ],
-  [
-    "ADITYA ALAM"
-  ]
-];
+function stripHtmlComments(html) {
+  return html.replace(/<!--[\s\S]*?-->/g, "").trim();
+}
 
-export const winners = [
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 4
-    },
-    "AMOGH BARDHAN DASH",
-    {
-      "content": "ODISHA UNIVERSITY OF TECHNOLOGY AND RESEARCH, BHUBANESWAR",
-      "rowspan": 4
-    },
-    {
-      "content": "BHUBANESWAR",
-      "rowspan": 4
-    },
-    {
-      "content": "ODISHA",
-      "rowspan": 4
-    }
-  ],
-  [
-    "ADITYA PRIYADARSHI SAHOO"
-  ],
-  [
-    "BIGHNESH KUMAR DAS"
-  ],
-  [
-    "AARON ARYAJYOTI"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "M Sai Shashank",
-    {
-      "content": "CHENNAI INSTITUTE OF TECHNOLOGY",
-      "rowspan": 5
-    },
-    {
-      "content": "CHENNAI",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Harshawardhan H"
-  ],
-  [
-    "JAI SRUTHI S"
-  ],
-  [
-    "Kaviya M"
-  ],
-  [
-    "Tabeena A"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "ASHUTOSH DASH",
-    {
-      "content": "ODISHA UNIVERSITY OF TECHNOLOGY AND RESEARCH, BHUBANESWAR",
-      "rowspan": 3
-    },
-    {
-      "content": "BHUBANESWAR",
-      "rowspan": 3
-    },
-    {
-      "content": "ODISHA",
-      "rowspan": 3
-    }
-  ],
-  [
-    "SWATI SAMAPIKA KAR"
-  ],
-  [
-    "HITESH MISHRA"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "KAVIYAN A",
-    {
-      "content": "CHENNAI INSTITUTE OF TECHNOLOGY",
-      "rowspan": 5
-    },
-    {
-      "content": "CHENNAI",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Monish Kumar M"
-  ],
-  [
-    "Jayavarshan RD"
-  ],
-  [
-    "V Rishitharan"
-  ],
-  [
-    "Mari Aravind B"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Arshadh Kumaran G",
-    {
-      "content": "CHENNAI INSTITUTE OF TECHNOLOGY",
-      "rowspan": 4
-    },
-    {
-      "content": "CHENNAI",
-      "rowspan": 4
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 4
-    }
-  ],
-  [
-    "N Raadhna"
-  ],
-  [
-    "Sanjay Karthick S"
-  ],
-  [
-    "Shylesh Kumar S"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Vishwar S J",
-    {
-      "content": "SRI SAIRAM ENGINEERING COLLEGE",
-      "rowspan": 5
-    },
-    {
-      "content": "CHENNAI",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Deva Kumar M K"
-  ],
-  [
-    "Nadella Lakshmi Uday"
-  ],
-  [
-    "Soorya K"
-  ],
-  [
-    "Sundareshwaran D"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "F REMI DAYAKAR",
-    "LOYOLA_ICAM COLLEGE OF ENGINEERING AND TECHNOLOGY",
-    "CHENNAI",
-    "TAMIL NADU"
-  ]
-];
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
 
-export const notable = [
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Yadla saadwin anjan",
-    {
-      "content": "NARAYANA ENGINEERING COLLEGE NELLORE",
-      "rowspan": 5
-    },
-    {
-      "content": "NELLORE",
-      "rowspan": 5
-    },
-    {
-      "content": "ANDHRA PRADESH",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Ratavarapu Keerthi"
-  ],
-  [
-    "Inukurthi spandana"
-  ],
-  [
-    "Dharwaj sudhish"
-  ],
-  [
-    "Yadlapalli venkata nagasai deepak haranadh"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "Spandan H. Parikh",
-    "VVP ENGINEERING COLLEGE",
-    "RAJKOT",
-    {
-      "content": "GUJARAT",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Meet D. Parekh",
-    "PARUL UNIVERISITY",
-    "VADODARA"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Jeevan R",
-    {
-      "content": "SREENIDHI INSTITUTE OF SCIENCE AND TECHNOLOGY",
-      "rowspan": 5
-    },
-    {
-      "content": "HYDRABAD",
-      "rowspan": 5
-    },
-    {
-      "content": "TELENGANA",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Sannihith Madasu"
-  ],
-  [
-    "Yuthika Kanthi"
-  ],
-  [
-    "Manchikalapati Visishta"
-  ],
-  [
-    "P Vinay"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "PRAKATHEESH S",
-    {
-      "content": "SRI ESHWAR COLLEGE OF ENGINEERING",
-      "rowspan": 5
-    },
-    {
-      "content": "COIMBATORE",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "KARTHICK NAVEEN S"
-  ],
-  [
-    "MARIES HARI BOSE B"
-  ],
-  [
-    "MOHAMMED IRFAN"
-  ],
-  [
-    "MANOJ V"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Thrishna M",
-    {
-      "content": "SRI ESHWAR COLLEGE OF ENGINEERING",
-      "rowspan": 5
-    },
-    {
-      "content": "COIMBATORE",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Sai Pratheep D"
-  ],
-  [
-    "Dhaarani M"
-  ],
-  [
-    "Dharanish R P"
-  ],
-  [
-    "Shri Ashwanth"
-  ]
-];
+    return entities[char] ?? char;
+  });
+}
 
-export const participation = [
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "Shreharini V",
-    {
-      "content": "Chennai Institute Of Technology",
-      "rowspan": 2
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 2
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Suhas Chandra Mohan"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Himanshi Parte",
-    "Baderia global institute of management and technology",
-    "Jabalpur",
-    "Madhya Pradesh"
-  ],
-  [
-    "Energy & Sustainability",
-    "PRANAV RAJESHBHAI PRAJAPATI",
-    "Sarvajanik College of Engineering & Technology, Sarvajanik University",
-    "Surat",
-    "Gujarat"
-  ],
-  [
-    "Energy & Sustainability",
-    "AKASH.V",
-    "Er. Perumal Manimekalai College of Engineering",
-    "Hosur",
-    "Tamil Nadu"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Ayush verma",
-    "Chandigarh university",
-    "Mohali",
-    "punjab"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 4
-    },
-    "Sumit maheshwari",
-    {
-      "content": "Indore institute of science and technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Indore",
-      "rowspan": 4
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Suhani Sharma"
-  ],
-  [
-    "Suryansh Ahuja"
-  ],
-  [
-    "Garima Singh"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Harshit Singh Negi",
-    "vit bhopal",
-    "Sehore",
-    "Madhya Pradesh"
-  ],
-  [
-    "Energy & Sustainability",
-    "Pranav Rajeshbhai Prajapati",
-    "Sarvajanik College Of Engineering & Trchnology, Sarvajanik University Surat",
-    "Surat",
-    "Gujarat"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Anora Sharon Tessie S",
-    "Sri Sivasubramaniya Nadar College of engineering",
-    "Chennai",
-    "Tamil Nadu"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "PRIYANSHU KUMAR",
-    "IIT PATNA",
-    "Dhanbad",
-    "Jharkhand"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Siddhant kothiya",
-    "VIT Bhopal",
-    "Bhopal",
-    "Madhya Pradesh"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "AMAN KUMAR SINGH",
-    "VIT Bhopal",
-    "Bhopal",
-    "Madhya Pradesh"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 2
-    },
-    "Susindra Kumar Yadav",
-    {
-      "content": "Rajalakshmi institute of technology",
-      "rowspan": 2
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 2
-    },
-    {
-      "content": "chennai",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Antariksh Biswas"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "SHRUTI BANIK",
-    "VIT BHOPAL",
-    "SEHORE",
-    "MADHYA PRADESH"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "DIPANKAR JHA",
-    {
-      "content": "BIT SINDRI",
-      "rowspan": 3
-    },
-    {
-      "content": "DHANBAD",
-      "rowspan": 3
-    },
-    {
-      "content": "JHARKHAND",
-      "rowspan": 3
-    }
-  ],
-  [
-    "ABHISHEK DUBEY"
-  ],
-  [
-    "PRINCE KUMAR SINGH"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Poojaa sri S",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Rishivathen C"
-  ],
-  [
-    "Rathish kumar R"
-  ],
-  [
-    "Dharshini V M"
-  ],
-  [
-    "Nithish Kumar P"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "SHANTHINI S",
-    {
-      "content": "Sri Sai Ram Engineering College",
-      "rowspan": 3
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 3
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 3
-    }
-  ],
-  [
-    "BOOMIGA E R"
-  ],
-  [
-    "SUJITHRA R"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Abhishek Yadav",
-    "IIT Patna",
-    "LUCKNOW",
-    "Uttar Pradesh"
-  ],
-  [
-    "Energy & Sustainability",
-    "Himangshu Goswami",
-    "Darrang college",
-    "North Lakhimpur",
-    "Assam"
-  ],
-  [
-    "Energy & Sustainability",
-    "TUHINSH SHARMA",
-    "VIT BHOPAL",
-    "Aligarh",
-    "UTTAR PRADESH"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Sharveshe S S",
-    "Chennai Institute of Technology",
-    "chennai",
-    "Tamil Nadu"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Hari Narayana",
-    "Vellore institute of technology",
-    "amaravati",
-    "Andra pradesh"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Ayan Kar",
-    "Narula Institute Of Technology",
-    "Kolkata",
-    "West Bengal"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Harshita Malekar",
-    "YCCE",
-    "Nagpur",
-    "Maharashtra"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Raj Dwivedi",
-    "SRM Institute of Science and Technology, Ramapuram Campus",
-    "Chennai",
-    "Tamil Nadu"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Varad Patil",
-    "Indian Institute of Technology Bombay",
-    "Mumbai",
-    "Maharashtra"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "nexus smart campus managment",
-    "Padmabhooshan Vasantdada Patil Institute of Technology",
-    "Pune",
-    "Maharashtra"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Nathan Mathews",
-    "MANIPAL INSTITUTE OF TECHNOLOGY",
-    "MANIPAL",
-    "KARNATAKA"
-  ],
-  [
-    "Energy & Sustainability",
-    "Drishti Choudhary",
-    "Vellore Institute of Technology, Bhopal",
-    "Bhopal",
-    "Madhya Pradesh"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Gajendra choudhari",
-    "shah and anchor kutchi engeneering college",
-    "mumbai",
-    "Maharashtra"
-  ],
-  [
-    "Smart Campus / Smart City",
-    "Jubin Das",
-    "Central Institute of Technology Kokrajhar",
-    "Kokrajhar",
-    "Assam"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 2
-    },
-    "Prithivi Nandore",
-    {
-      "content": "Healthcare Professional",
-      "rowspan": 2
-    },
-    {
-      "content": "Jabalpur",
-      "rowspan": 2
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Kavita Ahirwar"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 5
-    },
-    "Tharun B S",
-    {
-      "content": "Sri Ramakrishna Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Alan S"
-  ],
-  [
-    "Shri Abinaya S"
-  ],
-  [
-    "Sanjay V S"
-  ],
-  [
-    "Nandhini T"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Jaisre K",
-    {
-      "content": "Sri Ramakrishna Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Krishnakanth J"
-  ],
-  [
-    "Nirupathunga M"
-  ],
-  [
-    "VINEETH TS"
-  ],
-  [
-    "Kamaleshwaran P"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "G Moukthika Sri srujana",
-    "Gitam institute of technology",
-    "Bangalore",
-    "Karnataka"
-  ],
-  [
-    "Kunthalapati Sreeya",
-    " ",
-    " ",
-    " "
-  ],
-  [
-    "K.Sreekar",
-    " ",
-    " ",
-    " "
-  ],
-  [
-    "Uppala Danush Shankar",
-    " ",
-    " ",
-    " "
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 4
-    },
-    "Ayisha siddiqa. A",
-    {
-      "content": "Chennai institute of technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Rochana. K"
-  ],
-  [
-    "Roshini. K"
-  ],
-  [
-    "Neeraja. M"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 4
-    },
-    "Kurra Naveen",
-    {
-      "content": "Velagapudi Ramakrishna Siddhartha Engineering College",
-      "rowspan": 4
-    },
-    {
-      "content": "Vijayawada",
-      "rowspan": 4
-    },
-    {
-      "content": "Andhra Pradesh",
-      "rowspan": 4
-    }
-  ],
-  [
-    "N.Ajay Babu"
-  ],
-  [
-    "V.Bhuvaneswari"
-  ],
-  [
-    "M.Venkat Sasank"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Leninsingharam.G",
-    {
-      "content": "PSG INSTITUTE OF TECHNOLOGY AND APPLIED RESEARCH",
-      "rowspan": 5
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Nanthavikraman M S"
-  ],
-  [
-    "Dillimaran k"
-  ],
-  [
-    "Sam rojes J"
-  ],
-  [
-    "Kamaleshwar k k"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "MOHAMED RAFFI S",
-    {
-      "content": "SRI SAIRAM INSTITUTE OF TECHNOLOGY",
-      "rowspan": 3
-    },
-    {
-      "content": "CHENNAI",
-      "rowspan": 3
-    },
-    {
-      "content": "TAMILNADU",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Amarnath M"
-  ],
-  [
-    "Dhayanithi M.k"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "Bohni Sikha Dey",
-    {
-      "content": "Central Institute of Technology Kokrajhar",
-      "rowspan": 3
-    },
-    {
-      "content": "Kokrajhar",
-      "rowspan": 3
-    },
-    {
-      "content": "Assam",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Pratyansha Kashyap Baishya"
-  ],
-  [
-    "ARLIZ HANNA BASUMATARI"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "P.SANTHI",
-    {
-      "content": "Bapatla Women's engineering college",
-      "rowspan": 5
-    },
-    {
-      "content": "Bapatla",
-      "rowspan": 5
-    },
-    {
-      "content": "Andhra Pradesh",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Y.NAGA JYOTHI"
-  ],
-  [
-    "V,Lakshmi"
-  ],
-  [
-    "D.MANI DEEPTHI"
-  ],
-  [
-    "B.Aprna Mastani"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 4
-    },
-    "Anumita Samaddar",
-    {
-      "content": "IIEST Shibpur",
-      "rowspan": 4
-    },
-    {
-      "content": "Howrah",
-      "rowspan": 4
-    },
-    {
-      "content": "West Bengal",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Shama Afreen"
-  ],
-  [
-    "Shubham Pal"
-  ],
-  [
-    "Deganga"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Diwakar P",
-    "Panimalar Engineering college",
-    "Kanchipuram",
-    "Tamil nadu"
-  ],
-  [
-    "S.HARISH",
-    "Saveetha School of Engineering",
-    "chennai",
-    "Tamil Nadu"
-  ],
-  [
-    "M.Santosh",
-    "Saveetha School of Engineering",
-    "chennai",
-    "Tamil Nadu"
-  ],
-  [
-    "G.balasubramanian",
-    "Saveetha School of Engineering",
-    "chennai",
-    "Tamil Nadu"
-  ],
-  [
-    "Aravind Eswar K S",
-    "Rajalakshmi Engineering college",
-    "Kanchipuram",
-    "Tamil Nadu"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 4
-    },
-    "S Venkata Shiva Lokesh Reddy",
-    {
-      "content": "Vellore Institute of Technology",
-      "rowspan": 4
-    },
-    "Nandyal",
-    {
-      "content": "Andhra Pradesh",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Kutikuppala Chetan Srinivas",
-    "Srikakulam"
-  ],
-  [
-    "Oleti Sreevathsa",
-    "Dharmavaram"
-  ],
-  [
-    "PV krishna yasaswi",
-    "Vishakapatnam"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "NANDNI NIRMAL",
-    {
-      "content": "VIT Bhopal University",
-      "rowspan": 2
-    },
-    {
-      "content": "Bhopal",
-      "rowspan": 2
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Isha Goyal"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 2
-    },
-    "Rishik Jariwala",
-    {
-      "content": "SVKM's Shri Bhagubhai Mafatlal Polytechnic and College of Engineering",
-      "rowspan": 2
-    },
-    {
-      "content": "Mumbai",
-      "rowspan": 2
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Nirmay Patel"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "ARCHANA H",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "MAHALAKSHMI J"
-  ],
-  [
-    "KAVYA PRIYA S"
-  ],
-  [
-    "S SREENIDHI"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 3
-    },
-    "Aurosmita Sahoo",
-    {
-      "content": "Centurion University of Technology and Management Bhubaneswar",
-      "rowspan": 3
-    },
-    {
-      "content": "Bhubaneswar",
-      "rowspan": 3
-    },
-    {
-      "content": "Odisha",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Laxmipriya Rout"
-  ],
-  [
-    "Disha Agarwalla"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "Shivam Kumar Gupta",
-    "Ganga Institute of Technology & Management",
-    "Delhi",
-    "Delhi"
-  ],
-  [
-    "Jahnavi Chaurasia",
-    "Feroze Gandhi Institute Of Engineering and Technology",
-    "Raebareli",
-    "Uttar Pradesh"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 2
-    },
-    "Nilay Nandimath",
-    {
-      "content": "PM SHRI KV Balrampur",
-      "rowspan": 2
-    },
-    {
-      "content": "Pune",
-      "rowspan": 2
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Tapan Sanjeevkumar Gupta"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Kavin.V",
-    {
-      "content": "Sri Eshwar College of Engineering",
-      "rowspan": 5
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 5
-    },
-    {
-      "content": "TamilNadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Kavin Kumar"
-  ],
-  [
-    "Krishna Kand S"
-  ],
-  [
-    "Arun Kumar P"
-  ],
-  [
-    "Kiruthic E T"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Murugan U",
-    {
-      "content": "Rajalakshmi Institute of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Kanchipuram",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Arjun EM"
-  ],
-  [
-    "Gnaneshwar R"
-  ],
-  [
-    "Logesh B"
-  ],
-  [
-    "Yuvasree P",
-    " ",
-    " ",
-    " "
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Sujal giri",
-    "Shambhunath Institute of Engineering and Technology, Prayagraj",
-    "Prayagraj",
-    {
-      "content": "Uttar Pradesh",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Hanshika Srivastava",
-    "Shambhunath Institute of Engineering and Technology, Prayagraj",
-    "Prayagraj"
-  ],
-  [
-    "Hariom Chandra Tripathi",
-    "Indian Institute of Technology Patna",
-    "Sonbhadra"
-  ],
-  [
-    "Aradhya Srivastava",
-    "Indian Institute of Technology Patna",
-    "Prayagraj"
-  ],
-  [
-    "Munni kumari",
-    "Shambhunath Institute of Engineering and Technology, Prayagraj",
-    "Prayagraj"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 2
-    },
-    "Aaradhya Sharma",
-    {
-      "content": "Vellore Institute of Technology,Chennai",
-      "rowspan": 2
-    },
-    "Kanpur",
-    "Uttar Pradesh"
-  ],
-  [
-    "Thakur Akshaykumar Raj",
-    "Patna",
-    "Bihar"
-  ],
-  [
-    "Healthcare & Assistive Devices",
-    "Tanmay Sharma",
-    "Vellore Institute of Technology,Chennai",
-    "Punjab",
-    "Chandigarh"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 3
-    },
-    "Rishabh Jain",
-    {
-      "content": "Jaypee University of Engineering & Technology",
-      "rowspan": 3
-    },
-    {
-      "content": "Guna",
-      "rowspan": 3
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Sagar Seth"
-  ],
-  [
-    "Siddhant Vashisth"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "ASWIN JOE E",
-    {
-      "content": "St. Xavier's Catholic College of Engineering",
-      "rowspan": 5
-    },
-    {
-      "content": "Nagercoil",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "MOHAMMED NIYASH S"
-  ],
-  [
-    "AKASH A"
-  ],
-  [
-    "JEOFRIN J M"
-  ],
-  [
-    "Dr. J. LEON BOSCO RAJ"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "Vaishnavi Sanjay Shirsat",
-    {
-      "content": "Walchand College of Engineering Sangli",
-      "rowspan": 3
-    },
-    {
-      "content": "Sangli",
-      "rowspan": 3
-    },
-    {
-      "content": "Maharastra",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Samartha Gavli"
-  ],
-  [
-    "Shrinivas Kulkarni"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "Krishna Radheshyam Prajapati",
-    {
-      "content": "B.G.P.S. Mumbai College, University of Mumbai, India",
-      "rowspan": 2
-    },
-    {
-      "content": "Mumbai",
-      "rowspan": 2
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Suraj Chandraram Sahani"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "ELIJAH TIMOTHY PETER",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "HEMACHANDRAN S"
-  ],
-  [
-    "K R ARIVAZHAGAN"
-  ],
-  [
-    "NITHISH KUMARA V"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Jayesh Dnyaneshwar Sapkale",
-    {
-      "content": "JSPM's Jayawantrao Sawant College Of Engineering Pune",
-      "rowspan": 5
-    },
-    {
-      "content": "Pune",
-      "rowspan": 5
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Nikhil Balasaheb Jarkad"
-  ],
-  [
-    "Mandar Madhukar Gaikwad"
-  ],
-  [
-    "Harsh Nitin Shinde"
-  ],
-  [
-    "Pratik Shankar Walunj"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Harshita Thakur",
-    {
-      "content": "Baderia global institute of engineering and management",
-      "rowspan": 5
-    },
-    {
-      "content": "Jabalpur",
-      "rowspan": 5
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Mahak Thakur"
-  ],
-  [
-    "Muskan rajak"
-  ],
-  [
-    "Ankita kol"
-  ],
-  [
-    "Mahi namdev"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "G Shireesha",
-    {
-      "content": "BVRIT HYDERABAD College of Engineering for Women",
-      "rowspan": 5
-    },
-    {
-      "content": "Hyderabad",
-      "rowspan": 5
-    },
-    {
-      "content": "Telangana",
-      "rowspan": 5
-    }
-  ],
-  [
-    "K Sindu Sree"
-  ],
-  [
-    "M Sai Varshini"
-  ],
-  [
-    "Ch Sanjana"
-  ],
-  [
-    "R Kavya Naga Sai Sri"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Nishiithaa G",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Suprit G"
-  ],
-  [
-    "Vishal A M"
-  ],
-  [
-    "Kesava Ranjith R"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 3
-    },
-    "Kaarthik Krishnan S",
-    {
-      "content": "Knowledge Institute of Techonology",
-      "rowspan": 3
-    },
-    {
-      "content": "Salem",
-      "rowspan": 3
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Sachin J P"
-  ],
-  [
-    "Swathy sree K"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 3
-    },
-    "L.G. DHESIKAA",
-    {
-      "content": "King's College of Engineering",
-      "rowspan": 3
-    },
-    {
-      "content": "Thanjavur",
-      "rowspan": 3
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 3
-    }
-  ],
-  [
-    "A. ASHVINIYA"
-  ],
-  [
-    "S.HARIHARAN"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "S Afrah Thanseem",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Mohanapriya V"
-  ],
-  [
-    "Adlin Ahisha S"
-  ],
-  [
-    "Vijayalakshmi N"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Rithik A",
-    {
-      "content": "Chennai Institute Of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "ANNTRIN JOE CRISON W"
-  ],
-  [
-    "Sridhar S"
-  ],
-  [
-    "Dheebavizhiyan Velvizhi Gopinath"
-  ],
-  [
-    "Poovarasan N"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Shubhdeep Singh",
-    {
-      "content": "VIT Bhopal University",
-      "rowspan": 5
-    },
-    {
-      "content": "Bhopal",
-      "rowspan": 5
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Oaj Borwankar"
-  ],
-  [
-    "PV Rohan"
-  ],
-  [
-    "Krish Gursahani"
-  ],
-  [
-    "Anuraag Singh"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 3
-    },
-    "Akhilesh M",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 3
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 3
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Sabari Saravanan T S"
-  ],
-  [
-    "THARUN PRANAV S R"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "Akshita Sondhi",
-    {
-      "content": "IIIT-NR",
-      "rowspan": 2
-    },
-    {
-      "content": "Raipur",
-      "rowspan": 2
-    },
-    {
-      "content": "Chhattisgarh",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Ekansh Arohi"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "S Niveditha",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Sharmila S"
-  ],
-  [
-    "Shreemathi N D"
-  ],
-  [
-    "Deepika S"
-  ],
-  [
-    "Divyadarshini K"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Nishad Patil",
-    {
-      "content": "MIT-WPU Kothrud,Pune",
-      "rowspan": 5
-    },
-    {
-      "content": "Pune",
-      "rowspan": 5
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Devdatta Shahane"
-  ],
-  [
-    "Sandesh Kotwal"
-  ],
-  [
-    "Sai Chavan"
-  ],
-  [
-    "Arnav Awatipatil"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "PRAVEEN R",
-    {
-      "content": "CHENNAI INSTITUTE OF TECHNOLOGY",
-      "rowspan": 5
-    },
-    {
-      "content": "CHENNAI",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMILNADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "SENBAGASEELAN V"
-  ],
-  [
-    "RAGUL T"
-  ],
-  [
-    "THARUNBABU V"
-  ],
-  [
-    "DHINEKKA B"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Lavanya G",
-    {
-      "content": "Sri Ramakrishna Engineering College",
-      "rowspan": 5
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Rajalakshmi P"
-  ],
-  [
-    "Rakshana R"
-  ],
-  [
-    "Sridarshan A"
-  ],
-  [
-    "Surendar V"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "R Ashwin",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Raghul J L"
-  ],
-  [
-    "S Santosh"
-  ],
-  [
-    "Nethrasri R"
-  ],
-  [
-    "Nithin R"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Roslin jeronshiya D",
-    {
-      "content": "Chettinad College of Engineering and Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Karur",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Tharanika N"
-  ],
-  [
-    "Hiriseeka N"
-  ],
-  [
-    "Girija R"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "MANISHANKAR M",
-    {
-      "content": "SRI RAMAKRISHNA ENGINEERING COLLEGE",
-      "rowspan": 5
-    },
-    {
-      "content": "COIMBATORE",
-      "rowspan": 5
-    },
-    {
-      "content": "TAMIL NADU",
-      "rowspan": 5
-    }
-  ],
-  [
-    "PRAVEEN KUMAR P"
-  ],
-  [
-    "VIGNESHKUMAR G"
-  ],
-  [
-    "VISHWADHARANI V"
-  ],
-  [
-    "ROCHITHA P"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "JAYARAJ M",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Ashwin R"
-  ],
-  [
-    "Vishal Meyyappan R"
-  ],
-  [
-    "Kishore V S"
-  ],
-  [
-    "Lokesh R"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 3
-    },
-    "Manikandan C",
-    {
-      "content": "Sri Ramakrishna Engineering College",
-      "rowspan": 3
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 3
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Dhanayakumar S"
-  ],
-  [
-    "Dhayaan B"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Girija R",
-    {
-      "content": "Chettinad College of Engineering and Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Karur",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Hiriseeka N"
-  ],
-  [
-    "Roslin jeronshiya D"
-  ],
-  [
-    "Tharanika N"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 5
-    },
-    "Cynthia C",
-    {
-      "content": "St. Xavier's Catholic College of Engineering,Chunkankadai",
-      "rowspan": 5
-    },
-    {
-      "content": "Nagercoil",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Subin.S"
-  ],
-  [
-    "Angelo Vibin.V"
-  ],
-  [
-    "Senthilathieban .A"
-  ],
-  [
-    "Akash S.V"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "MUKKAMALA SAI VARUNTEJ",
-    {
-      "content": "RAGHU ENGINEERING COLLEGE",
-      "rowspan": 5
-    },
-    {
-      "content": "VISAKHAPATNAM",
-      "rowspan": 5
-    },
-    {
-      "content": "ANDHRA PRADESH",
-      "rowspan": 5
-    }
-  ],
-  [
-    "R.V.M.S.VARUN SWAMY"
-  ],
-  [
-    "GOMPA JAYANTH"
-  ],
-  [
-    "BHAGI PRANEEL REDDY"
-  ],
-  [
-    "BURA CHARAN SAI"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 4
-    },
-    "SAISUBRAMANI H S",
-    {
-      "content": "SRI SAIRAM INSTITUTE OF TECHNOLOGY",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "IYYNESWARAN P"
-  ],
-  [
-    "NAUGEETH P"
-  ],
-  [
-    "SHUBHAM KUMAR"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 5
-    },
-    "Prashant Dubey",
-    {
-      "content": "VIT Bhopal",
-      "rowspan": 5
-    },
-    {
-      "content": "Bhopal",
-      "rowspan": 5
-    },
-    {
-      "content": "Madhya Pradesh",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Jihi Mamtani"
-  ],
-  [
-    "Deshna Jain"
-  ],
-  [
-    "Sahil Dalwani"
-  ],
-  [
-    "Palak Choithani"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 3
-    },
-    "Shreesh Prateek Pathak",
-    {
-      "content": "Vellore Institute of Technology Vellore",
-      "rowspan": 3
-    },
-    "Raipur",
-    "Chhattisgarh"
-  ],
-  [
-    "Soumyajit Pal",
-    "Kolkata",
-    "West Bengal"
-  ],
-  [
-    "Hriddhi Biswas",
-    "Agartala",
-    "Tripura"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Vasudev R",
-    {
-      "content": "Chennai Institiute of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "G Dhiikshanyaa"
-  ],
-  [
-    "Dhanush U"
-  ],
-  [
-    "Kaushick U"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "RAVINDHAR M",
-    {
-      "content": "Chennai Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Sanjay S"
-  ],
-  [
-    "Ramaprakash B"
-  ],
-  [
-    "Keshav N"
-  ],
-  [
-    "Tamilmani S"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Palaniraj M",
-    {
-      "content": "Chennai in Institute Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Krisanth M"
-  ],
-  [
-    "Hari Hara Sudhan R"
-  ],
-  [
-    "F Mohamed Zayn Ismail"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 3
-    },
-    "SAISUBRAMANI H S",
-    {
-      "content": "SRI SAIRAM INSTITUTE OF TECHNOLOGY",
-      "rowspan": 3
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 3
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 3
-    }
-  ],
-  [
-    "SARVESVAR S"
-  ],
-  [
-    "IYYNESWARAN P"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 4
-    },
-    "Aadidev Raizada",
-    {
-      "content": "Mukesh Patel School of Technology Management and Engineering",
-      "rowspan": 4
-    },
-    {
-      "content": "Mumbai",
-      "rowspan": 4
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Kush Modi"
-  ],
-  [
-    "Pratham Baldewa"
-  ],
-  [
-    "Aadarsh Suryawanshi"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 4
-    },
-    "MANIKANDAN R",
-    {
-      "content": "Loyola-ICAM College of Engineering and Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Chennai",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "ARUN KUMAR M P"
-  ],
-  [
-    "KUMUDHA SHREE B"
-  ],
-  [
-    "JENLIN ANNE FLORA J"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 4
-    },
-    "Sarang Patil",
-    {
-      "content": "SIES Graduate School of Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Navi Mumbai",
-      "rowspan": 4
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Atharva Bendale"
-  ],
-  [
-    "Ratish Patil"
-  ],
-  [
-    "Amey Khapre"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 5
-    },
-    "Padavala Tarun Kumar",
-    {
-      "content": "Siddhartha Academy of Higher Education",
-      "rowspan": 5
-    },
-    {
-      "content": "Vijayawada",
-      "rowspan": 5
-    },
-    {
-      "content": "Andhra Pradesh",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Pedaveghi Teja Sai Naga Kumar"
-  ],
-  [
-    "Mudigonda Bharath Kumar"
-  ],
-  [
-    "Tammu Raghava Raju"
-  ],
-  [
-    "Varshitha Yalamarthi"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "Tharanika N",
-    {
-      "content": "Chettinad College of Engineering and Technology",
-      "rowspan": 4
-    },
-    {
-      "content": "Karur",
-      "rowspan": 4
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 4
-    }
-  ],
-  [
-    "Girija R"
-  ],
-  [
-    "Hiriseeka N"
-  ],
-  [
-    "Roslin Jeronshiya D"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 3
-    },
-    "Devarth Dubey",
-    {
-      "content": "Central Institute of Technology Kokrajhar",
-      "rowspan": 3
-    },
-    {
-      "content": "Kokrajhar",
-      "rowspan": 3
-    },
-    {
-      "content": "Assam",
-      "rowspan": 3
-    }
-  ],
-  [
-    "Govind Kumar Prajapati"
-  ],
-  [
-    "Antaryami Panigrahi"
-  ],
-  [
-    {
-      "content": "Healthcare & Assistive Devices",
-      "rowspan": 4
-    },
-    "PRAVEEN KANTH P",
-    {
-      "content": "SRI ESHWAR COLLEGE OF ENGINEERING",
-      "rowspan": 4
-    },
-    {
-      "content": "COIMBATORE",
-      "rowspan": 4
-    },
-    {
-      "content": "TAMILNADU",
-      "rowspan": 4
-    }
-  ],
-  [
-    "NAVYA M"
-  ],
-  [
-    "KIRUTHIC T"
-  ],
-  [
-    "MAYILPRIYAN S"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 5
-    },
-    "Murugan U",
-    {
-      "content": "Rajalakshmi Institute of Technology",
-      "rowspan": 5
-    },
-    {
-      "content": "Kanchipuram",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamilnadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Gnaneshwar R"
-  ],
-  [
-    "Logesh B"
-  ],
-  [
-    "Arjun EM"
-  ],
-  [
-    "Yuvasree P"
-  ],
-  [
-    {
-      "content": "Smart Campus / Smart City",
-      "rowspan": 2
-    },
-    "Bhuvan Bagwe",
-    "Air Calibre",
-    {
-      "content": "Mumbai",
-      "rowspan": 2
-    },
-    {
-      "content": "Maharashtra",
-      "rowspan": 2
-    }
-  ],
-  [
-    "Yash Shah",
-    "D J Sanghvi College of Engineering"
-  ],
-  [
-    {
-      "content": "Energy & Sustainability",
-      "rowspan": 5
-    },
-    "Aatheesh",
-    {
-      "content": "Sri Ramakrishna Engineering College",
-      "rowspan": 5
-    },
-    {
-      "content": "Coimbatore",
-      "rowspan": 5
-    },
-    {
-      "content": "Tamil Nadu",
-      "rowspan": 5
-    }
-  ],
-  [
-    "Vijayabharathi N"
-  ],
-  [
-    "Kowshikan A"
-  ],
-  [
-    "Vishnu Varthan S"
-  ],
-  [
-    "Gowri Shankar R"
-  ]
-];
+function buildTableHead() {
+  return `<thead><tr>${headers
+    .map((header) => `<th scope="col">${escapeHtml(header)}</th>`)
+    .join("")}</tr></thead>`;
+}
+
+function normalizeTableHtml(html) {
+  const cleaned = stripHtmlComments(html);
+
+  if (!cleaned) {
+    return "";
+  }
+
+  const tableHead = buildTableHead();
+
+  if (/<table[\s>]/i.test(cleaned)) {
+    if (/<thead[\s>]/i.test(cleaned)) {
+      return cleaned;
+    }
+
+    return cleaned.replace(/<table([^>]*)>/i, `<table$1>${tableHead}`);
+  }
+
+  if (/^<tbody[\s>]/i.test(cleaned)) {
+    return `<table>${tableHead}${cleaned}</table>`;
+  }
+
+  return `<table>${tableHead}<tbody>${cleaned}</tbody></table>`;
+}
+
+const championHtml = normalizeTableHtml(String.raw`
+<table>
+<tbody>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Dhavala Eswar Pavan Teja</td>
+<td colspan="1" rowspan="4">
+<div>Rajiv Gandhi University Of Knowledge Technologies - Nuzvid</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Polavaram</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Andra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Chappati Tanuja Srilakshmi</td>
+</tr>
+<tr>
+<td>Malisetty Aishwarya</td>
+</tr>
+<tr>
+<td>Aditya Alam</td>
+</tr>
+</tbody>
+</table>
+`);
+
+export { headers, championHtml, winnersHtml, notableHtml, participationHtml };
+
+const winnersHtml = normalizeTableHtml(String.raw`
+<table>
+<tbody>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Amogh Bardhan Dash</td>
+<td colspan="1" rowspan="4">
+<div>Odisha University Of Technology And Research, Bhubaneswar</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Bhubaneswar</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Odisha</div>
+</td>
+</tr>
+<tr>
+<td>Aditya Priyadarshi Sahoo</td>
+</tr>
+<tr>
+<td>Bighnesh Kumar Das</td>
+</tr>
+<tr>
+<td>Aaron Aryajyoti</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>M Sai Shashank</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Harshawardhan H</td>
+</tr>
+<tr>
+<td>Jai Sruthi S</td>
+</tr>
+<tr>
+<td>Kaviya M</td>
+</tr>
+<tr>
+<td>Tabeena A</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Ashutosh Dash</td>
+<td colspan="1" rowspan="3">
+<div>Odisha University Of Technology And Research, Bhubaneswar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Bhubaneswar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Odisha</div>
+</td>
+</tr>
+<tr>
+<td>Swati Samapika Kar</td>
+</tr>
+<tr>
+<td>Hitesh Mishra</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Kaviyan A</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Monish Kumar M</td>
+</tr>
+<tr>
+<td>Jayavarshan Rd</td>
+</tr>
+<tr>
+<td>V Rishitharan</td>
+</tr>
+<tr>
+<td>Mari Aravind B</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Arshadh Kumaran G</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>N Raadhna</td>
+</tr>
+<tr>
+<td>Sanjay Karthick S</td>
+</tr>
+<tr>
+<td>Shylesh Kumar S</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Vishwar S J</td>
+<td colspan="1" rowspan="5">
+<div>Sri Sairam Engineering College</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Deva Kumar M K</td>
+</tr>
+<tr>
+<td>Nadella Lakshmi Uday</td>
+</tr>
+<tr>
+<td>Soorya K</td>
+</tr>
+<tr>
+<td>Sundareshwaran D</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>F Remi Dayakar</td>
+<td>Loyola_Icam College Of Engineering And Technology</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+</tbody>
+</table>
+`);
+
+const notableHtml = normalizeTableHtml(String.raw`
+<table>
+<tbody>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Yadla Saadwin Anjan</td>
+<td colspan="1" rowspan="5">
+<div>Narayana Engineering College Nellore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Nellore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Andhra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Ratavarapu Keerthi</td>
+</tr>
+<tr>
+<td>Inukurthi Spandana</td>
+</tr>
+<tr>
+<td>Dharwaj Sudhish</td>
+</tr>
+<tr>
+<td>Yadlapalli Venkata Nagasai Deepak Haranadh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Spandan H. Parikh</td>
+<td>VVP Engineering College</td>
+<td>Rajkot</td>
+<td colspan="1" rowspan="2">
+<div>Gujarat</div>
+</td>
+</tr>
+<tr>
+<td>Meet D. Parekh</td>
+<td>Parul Univerisity</td>
+<td>Vadodara</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Jeevan R</td>
+<td colspan="1" rowspan="5">
+<div>Sreenidhi Institute Of Science And Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Hydrabad</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Telengana</div>
+</td>
+</tr>
+<tr>
+<td>Sannihith Madasu</td>
+</tr>
+<tr>
+<td>Yuthika Kanthi</td>
+</tr>
+<tr>
+<td>Manchikalapati Visishta</td>
+</tr>
+<tr>
+<td>P Vinay</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Prakatheesh S</td>
+<td colspan="1" rowspan="5">
+<div>Sri Eshwar College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Karthick Naveen S</td>
+</tr>
+<tr>
+<td>Maries Hari Bose B</td>
+</tr>
+<tr>
+<td>Mohammed Irfan</td>
+</tr>
+<tr>
+<td>Manoj V</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Thrishna M</td>
+<td colspan="1" rowspan="5">
+<div>Sri Eshwar College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Sai Pratheep D</td>
+</tr>
+<tr>
+<td>Dhaarani M</td>
+</tr>
+<tr>
+<td>Dharanish R P</td>
+</tr>
+<tr>
+<td>Shri Ashwanth</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Praveen Kumar Patel</td>
+<td colspan="1" rowspan="2">
+<div>VIT Bhopal</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Indore</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Sohit Sahu</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Dharshan M</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Santhosh S</td>
+</tr>
+<tr>
+<td>Adithya P</td>
+</tr>
+<tr>
+<td>Muhammadu Rasheeq Jm</td>
+</tr>
+<tr>
+<td>Udhayakannan P</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Dhirendra Gundre</td>
+<td>Vishwakarma Institute Of Technology</td>
+<td>Pune</td>
+<td>Maharashtra</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Sarthak Kasar</td>
+<td>Vishwakarma Institute Of Technology</td>
+<td>Pune</td>
+<td>Maharashtra</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Deepak J</td>
+<td>Knowledge Institute Of Technology</td>
+<td>Salem</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Chaitanya Nehe</td>
+<td>WIT Solapur</td>
+<td>Solapur</td>
+<td>Maharashtra</td>
+</tr>
+</tbody>
+</table>
+`);
+
+const participationHtml = normalizeTableHtml(String.raw`
+<table>
+<tbody>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Shreharini V</td>
+<td>Chennai Institute Of Technology</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Himanshi Parte</td>
+<td>Baderia Global Institute Of Management And Technology</td>
+<td>Jabalpur</td>
+<td>Madhya Pradesh</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Pranav Rajeshbhai Prajapati</td>
+<td>Sarvajanik College Of Engineering &amp; Technology, Sarvajanik University</td>
+<td>Surat</td>
+<td>Gujarat</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Akash.V</td>
+<td>Er. Perumal Manimekalai College Of Engineering</td>
+<td>Hosur</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Ayush Verma</td>
+<td>Chandigarh University</td>
+<td>Mohali</td>
+<td>Punjab</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Sumit Maheshwari</td>
+<td colspan="1" rowspan="4">
+<div>Indore Institute Of Science And Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Indore</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Suhani Sharma</td>
+</tr>
+<tr>
+<td>Suryansh Ahuja</td>
+</tr>
+<tr>
+<td>Garima Singh</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Harshit Singh Negi</td>
+<td>VIT Bhopal</td>
+<td>Sehore</td>
+<td>Madhya Pradesh</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Pranav Rajeshbhai Prajapati</td>
+<td>Sarvajanik College Of Engineering &amp; Trchnology, Sarvajanik University Surat</td>
+<td>Surat</td>
+<td>Gujarat</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Anora Sharon Tessie S</td>
+<td>Sri Sivasubramaniya Nadar College Of Engineering</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Priyanshu Kumar</td>
+<td>IIT Patna</td>
+<td>Dhanbad</td>
+<td>Jharkhand</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Siddhant Kothiya</td>
+<td>VIT Bhopal</td>
+<td>Bhopal</td>
+<td>Madhya Pradesh</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Aman Kumar Singh</td>
+<td>VIT Bhopal</td>
+<td>Bhopal</td>
+<td>Madhya Pradesh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Susindra Kumar Yadav</td>
+<td colspan="1" rowspan="2">
+<div>Rajalakshmi Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Tamil Nadu</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Chennai</div>
+</td>
+</tr>
+<tr>
+<td>Antariksh Biswas</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Shruti Banik</td>
+<td>VIT Bhopal</td>
+<td>Sehore</td>
+<td>Madhya Pradesh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Dipankar Jha</td>
+<td colspan="1" rowspan="3">
+<div>Bit Sindri</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Dhanbad</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Jharkhand</div>
+</td>
+</tr>
+<tr>
+<td>Abhishek Dubey</td>
+</tr>
+<tr>
+<td>Prince Kumar Singh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Poojaa Sri S</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Rishivathen C</td>
+</tr>
+<tr>
+<td>Rathish Kumar R</td>
+</tr>
+<tr>
+<td>Dharshini V M</td>
+</tr>
+<tr>
+<td>Nithish Kumar P</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Shanthini S</td>
+<td colspan="1" rowspan="3">
+<div>Sri Sai Ram Engineering College</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Boomiga E R</td>
+</tr>
+<tr>
+<td>Sujithra R</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Abhishek Yadav</td>
+<td>IIT Patna</td>
+<td>Lucknow</td>
+<td>Uttar Pradesh</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Himangshu Goswami</td>
+<td>Darrang College</td>
+<td>North Lakhimpur</td>
+<td>Assam</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Tuhinsh Sharma</td>
+<td>VIT Bhopal</td>
+<td>Aligarh</td>
+<td>Uttar Pradesh</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Sharveshe S S</td>
+<td>Chennai Institute Of Technology</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Hari Narayana</td>
+<td>Vellore Institute Of Technology</td>
+<td>Amaravati</td>
+<td>Andra Pradesh</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Ayan Kar</td>
+<td>Narula Institute Of Technology</td>
+<td>Kolkata</td>
+<td>West Bengal</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Harshita Malekar</td>
+<td>YCCE</td>
+<td>Nagpur</td>
+<td>Maharashtra</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Raj Dwivedi</td>
+<td>Srm Institute Of Science And Technology, Ramapuram Campus</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Varad Patil</td>
+<td>Indian Institute Of Technology Bombay</td>
+<td>Mumbai</td>
+<td>Maharashtra</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Nexus Smart Campus Managment</td>
+<td>Padmabhooshan Vasantdada Patil Institute Of Technology</td>
+<td>Pune</td>
+<td>Maharashtra</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Nathan Mathews</td>
+<td>Manipal Institute Of Technology</td>
+<td>Manipal</td>
+<td>Karnataka</td>
+</tr>
+<tr>
+<td>Energy &amp; Sustainability</td>
+<td>Drishti Choudhary</td>
+<td>Vellore Institute Of Technology, Bhopal</td>
+<td>Bhopal</td>
+<td>Madhya Pradesh</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Gajendra Choudhari</td>
+<td>Shah And Anchor Kutchi Engeneering College</td>
+<td>Mumbai</td>
+<td>Maharashtra</td>
+</tr>
+<tr>
+<td>Smart Campus / Smart City</td>
+<td>Jubin Das</td>
+<td>Central Institute Of Technology Kokrajhar</td>
+<td>Kokrajhar</td>
+<td>Assam</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Prithivi Nandore</td>
+<td colspan="1" rowspan="2">
+<div>Healthcare Professional</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Jabalpur</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Kavita Ahirwar</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Tharun B S</td>
+<td colspan="1" rowspan="5">
+<div>Sri Ramakrishna Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Alan S</td>
+</tr>
+<tr>
+<td>Shri Abinaya S</td>
+</tr>
+<tr>
+<td>Sanjay V S</td>
+</tr>
+<tr>
+<td>Nandhini T</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Jaisre K</td>
+<td colspan="1" rowspan="5">
+<div>Sri Ramakrishna Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Krishnakanth J</td>
+</tr>
+<tr>
+<td>Nirupathunga M</td>
+</tr>
+<tr>
+<td>Vineeth Ts</td>
+</tr>
+<tr>
+<td>Kamaleshwaran P</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>G Moukthika Sri Srujana</td>
+<td colspan="1" rowspan="4">
+<div>Gitam Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Bangalore</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Karnataka</div>
+</td>
+</tr>
+<tr>
+<td>Kunthalapati Sreeya</td>
+</tr>
+<tr>
+<td>K.Sreekar</td>
+</tr>
+<tr>
+<td>Uppala Danush Shankar</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Ayisha Siddiqa. A</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamilnadu</div>
+</td>
+</tr>
+<tr>
+<td>Rochana. K</td>
+</tr>
+<tr>
+<td>Roshini. K</td>
+</tr>
+<tr>
+<td>Neeraja. M</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Kurra Naveen</td>
+<td colspan="1" rowspan="4">
+<div>Velagapudi Ramakrishna Siddhartha Engineering College</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Vijayawada</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Andhra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>N.Ajay Babu</td>
+</tr>
+<tr>
+<td>V.Bhuvaneswari</td>
+</tr>
+<tr>
+<td>M.Venkat Sasank</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Leninsingharam.G</td>
+<td colspan="1" rowspan="5">
+<div>PSG Institute Of Technology And Applied Research</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Nanthavikraman M S</td>
+</tr>
+<tr>
+<td>Dillimaran K</td>
+</tr>
+<tr>
+<td>Sam Rojes J</td>
+</tr>
+<tr>
+<td>Kamaleshwar K K</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Mohamed Raffi S</td>
+<td colspan="1" rowspan="3">
+<div>Sri Sairam Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamilnadu</div>
+</td>
+</tr>
+<tr>
+<td>Amarnath M</td>
+</tr>
+<tr>
+<td>Dhayanithi M.K</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Bohni Sikha Dey</td>
+<td colspan="1" rowspan="3">
+<div>Central Institute Of Technology Kokrajhar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Kokrajhar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Assam</div>
+</td>
+</tr>
+<tr>
+<td>Pratyansha Kashyap Baishya</td>
+</tr>
+<tr>
+<td>Arliz Hanna Basumatari</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>P.Santhi</td>
+<td colspan="1" rowspan="5">
+<div>Bapatla Women'S Engineering College</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Bapatla</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Andhra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Y.Naga Jyothi</td>
+</tr>
+<tr>
+<td>V,Lakshmi</td>
+</tr>
+<tr>
+<td>D.Mani Deepthi</td>
+</tr>
+<tr>
+<td>B.Aprna Mastani</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Anumita Samaddar</td>
+<td colspan="1" rowspan="4">
+<div>IIEST Shibpur</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Howrah</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>West Bengal</div>
+</td>
+</tr>
+<tr>
+<td>Shama Afreen</td>
+</tr>
+<tr>
+<td>Shubham Pal</td>
+</tr>
+<tr>
+<td>Deganga</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Diwakar P</td>
+<td>Panimalar Engineering College</td>
+<td>Kanchipuram</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>S.Harish</td>
+<td>Saveetha School Of Engineering</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>M.Santosh</td>
+<td>Saveetha School Of Engineering</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>G.Balasubramanian</td>
+<td>Saveetha School Of Engineering</td>
+<td>Chennai</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td>Aravind Eswar K S</td>
+<td>Rajalakshmi Engineering College</td>
+<td>Kanchipuram</td>
+<td>Tamil Nadu</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>S Venkata Shiva Lokesh Reddy</td>
+<td colspan="1" rowspan="4">
+<div>Vellore Institute Of Technology</div>
+</td>
+<td>Nandyal</td>
+<td colspan="1" rowspan="4">
+<div>Andhra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Kutikuppala Chetan Srinivas</td>
+<td>Srikakulam</td>
+</tr>
+<tr>
+<td>Oleti Sreevathsa</td>
+<td>Dharmavaram</td>
+</tr>
+<tr>
+<td>Pv Krishna Yasaswi</td>
+<td>Vishakapatnam</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Nandni Nirmal</td>
+<td colspan="1" rowspan="2">
+<div>VIT Bhopal</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Bhopal</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Isha Goyal</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Rishik Jariwala</td>
+<td colspan="1" rowspan="2">
+<div>SVKM Shri Bhagubhai Mafatlal Polytechnic And College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Mumbai</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Nirmay Patel</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Archana H</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamilnadu</div>
+</td>
+</tr>
+<tr>
+<td>Mahalakshmi J</td>
+</tr>
+<tr>
+<td>Kavya Priya S</td>
+</tr>
+<tr>
+<td>S Sreenidhi</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Aurosmita Sahoo</td>
+<td colspan="1" rowspan="3">
+<div>Centurion University Of Technology And Management Bhubaneswar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Bhubaneswar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Odisha</div>
+</td>
+</tr>
+<tr>
+<td>Laxmipriya Rout</td>
+</tr>
+<tr>
+<td>Disha Agarwalla</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Shivam Kumar Gupta</td>
+<td>Ganga Institute Of Technology &amp; Management</td>
+<td>Delhi</td>
+<td>Delhi</td>
+</tr>
+<tr>
+<td>Jahnavi Chaurasia</td>
+<td>Feroze Gandhi Institute Of Engineering And Technology</td>
+<td>Raebareli</td>
+<td>Uttar Pradesh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Nilay Nandimath</td>
+<td colspan="1" rowspan="2">
+<div>Pm Shri Kv Balrampur</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Pune</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Tapan Sanjeevkumar Gupta</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Kavin.V</td>
+<td colspan="1" rowspan="5">
+<div>Sri Eshwar College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamilnadu</div>
+</td>
+</tr>
+<tr>
+<td>Kavin Kumar</td>
+</tr>
+<tr>
+<td>Krishna Kand S</td>
+</tr>
+<tr>
+<td>Arun Kumar P</td>
+</tr>
+<tr>
+<td>Kiruthic E T</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Murugan U</td>
+<td colspan="1" rowspan="5">
+<div>Rajalakshmi Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Kanchipuram</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamilnadu</div>
+</td>
+</tr>
+<tr>
+<td>Arjun Em</td>
+</tr>
+<tr>
+<td>Gnaneshwar R</td>
+</tr>
+<tr>
+<td>Logesh B</td>
+</tr>
+<tr>
+<td>Yuvasree P</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Sujal Giri</td>
+<td>Shambhunath Institute Of Engineering And Technology, Prayagraj</td>
+<td>Prayagraj</td>
+<td colspan="1" rowspan="5">
+<div>Uttar Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Hanshika Srivastava</td>
+<td>Shambhunath Institute Of Engineering And Technology, Prayagraj</td>
+<td>Prayagraj</td>
+</tr>
+<tr>
+<td>Hariom Chandra Tripathi</td>
+<td>Indian Institute Of Technology Patna</td>
+<td>Sonbhadra</td>
+</tr>
+<tr>
+<td>Aradhya Srivastava</td>
+<td>Indian Institute Of Technology Patna</td>
+<td>Prayagraj</td>
+</tr>
+<tr>
+<td>Munni Kumari</td>
+<td>Shambhunath Institute Of Engineering And Technology, Prayagraj</td>
+<td>Prayagraj</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Aaradhya Sharma</td>
+<td colspan="1" rowspan="2">
+<div>Vellore Institute Of Technology</div>
+</td>
+<td>Kanpur</td>
+<td>Uttar Pradesh</td>
+</tr>
+<tr>
+<td>Thakur Akshaykumar Raj</td>
+<td>Patna</td>
+<td>Bihar</td>
+</tr>
+<tr>
+<td>Healthcare &amp; Assistive Devices</td>
+<td>Tanmay Sharma</td>
+<td>Vellore Institute Of Technology</td>
+<td>Punjab</td>
+<td>Chandigarh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Rishabh Jain</td>
+<td colspan="1" rowspan="3">
+<div>Jaypee University Of Engineering &amp; Technology</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Guna</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Sagar Seth</td>
+</tr>
+<tr>
+<td>Siddhant Vashisth</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Aswin Joe E</td>
+<td colspan="1" rowspan="5">
+<div>St. Xavier&rsquo;S Catholic College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Nagercoil</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Mohammed Niyash S</td>
+</tr>
+<tr>
+<td>Akash A</td>
+</tr>
+<tr>
+<td>Jeofrin J M</td>
+</tr>
+<tr>
+<td>Dr. J. Leon Bosco Raj</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Vaishnavi Sanjay Shirsat</td>
+<td colspan="1" rowspan="3">
+<div>Walchand College Of Engineering Sangli</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Sangli</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Maharastra</div>
+</td>
+</tr>
+<tr>
+<td>Samartha Gavli</td>
+</tr>
+<tr>
+<td>Shrinivas Kulkarni</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Krishna Radheshyam Prajapati</td>
+<td colspan="1" rowspan="2">
+<div>B.G.P.S. Mumbai College, University Of Mumbai, India</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Mumbai</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Suraj Chandraram Sahani</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Elijah Timothy Peter</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Hemachandran S</td>
+</tr>
+<tr>
+<td>K R Arivazhagan</td>
+</tr>
+<tr>
+<td>Nithish Kumara V</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Jayesh Dnyaneshwar Sapkale</td>
+<td colspan="1" rowspan="5">
+<div>JSPM Jayawantrao Sawant College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Pune</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Nikhil Balasaheb Jarkad</td>
+</tr>
+<tr>
+<td>Mandar Madhukar Gaikwad</td>
+</tr>
+<tr>
+<td>Harsh Nitin Shinde</td>
+</tr>
+<tr>
+<td>Pratik Shankar Walunj</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Harshita Thakur</td>
+<td colspan="1" rowspan="5">
+<div>Baderia Global Institute Of Engineering And Management</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Jabalpur</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Mahak Thakur</td>
+</tr>
+<tr>
+<td>Muskan Rajak</td>
+</tr>
+<tr>
+<td>Ankita Kol</td>
+</tr>
+<tr>
+<td>Mahi Namdev</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>G Shireesha</td>
+<td colspan="1" rowspan="5">
+<div>BVRIT Hyderabad College Of Engineering For Women</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Hyderabad</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Telangana</div>
+</td>
+</tr>
+<tr>
+<td>K Sindu Sree</td>
+</tr>
+<tr>
+<td>M Sai Varshini</td>
+</tr>
+<tr>
+<td>Ch Sanjana</td>
+</tr>
+<tr>
+<td>R Kavya Naga Sai Sri</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Nishiithaa G</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Suprit G</td>
+</tr>
+<tr>
+<td>Vishal A M</td>
+</tr>
+<tr>
+<td>Kesava Ranjith R</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Kaarthik Krishnan S</td>
+<td colspan="1" rowspan="3">
+<div>Knowledge Institute Of Techonology</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Salem</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Sachin J P</td>
+</tr>
+<tr>
+<td>Swathy Sree K</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>L.G. Dhesikaa</td>
+<td colspan="1" rowspan="3">
+<div>King College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Thanjavur</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamilnadu</div>
+</td>
+</tr>
+<tr>
+<td>A. Ashviniya</td>
+</tr>
+<tr>
+<td>S.Hariharan</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>S Afrah Thanseem</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Mohanapriya V</td>
+</tr>
+<tr>
+<td>Adlin Ahisha S</td>
+</tr>
+<tr>
+<td>Vijayalakshmi N</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Rithik A</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Anntrin Joe Crison W</td>
+</tr>
+<tr>
+<td>Sridhar S</td>
+</tr>
+<tr>
+<td>Dheebavizhiyan Velvizhi Gopinath</td>
+</tr>
+<tr>
+<td>Poovarasan N</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Shubhdeep Singh</td>
+<td colspan="1" rowspan="5">
+<div>VIT Bhopal</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Bhopal</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Oaj Borwankar</td>
+</tr>
+<tr>
+<td>Pv Rohan</td>
+</tr>
+<tr>
+<td>Krish Gursahani</td>
+</tr>
+<tr>
+<td>Anuraag Singh</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Akhilesh M</td>
+<td colspan="1" rowspan="3">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Sabari Saravanan T S</td>
+</tr>
+<tr>
+<td>Tharun Pranav S R</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Akshita Sondhi</td>
+<td colspan="1" rowspan="2">
+<div>IIIT-NR</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Raipur</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Chhattisgarh</div>
+</td>
+</tr>
+<tr>
+<td>Ekansh Arohi</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>S Niveditha</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Sharmila S</td>
+</tr>
+<tr>
+<td>Shreemathi N D</td>
+</tr>
+<tr>
+<td>Deepika S</td>
+</tr>
+<tr>
+<td>Divyadarshini K</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Nishad Patil</td>
+<td colspan="1" rowspan="5">
+<div>MIT-WPU Kothrud</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Pune</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Devdatta Shahane</td>
+</tr>
+<tr>
+<td>Sandesh Kotwal</td>
+</tr>
+<tr>
+<td>Sai Chavan</td>
+</tr>
+<tr>
+<td>Arnav Awatipatil</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Praveen R</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Senbagaseelan V</td>
+</tr>
+<tr>
+<td>Ragul T</td>
+</tr>
+<tr>
+<td>Tharunbabu V</td>
+</tr>
+<tr>
+<td>Dhinekka B</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Lavanya G</td>
+<td colspan="1" rowspan="5">
+<div>Sri Ramakrishna Engineering College</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Rajalakshmi P</td>
+</tr>
+<tr>
+<td>Rakshana R</td>
+</tr>
+<tr>
+<td>Sridarshan A</td>
+</tr>
+<tr>
+<td>Surendar V</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>R Ashwin</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Raghul J L</td>
+</tr>
+<tr>
+<td>S Santosh</td>
+</tr>
+<tr>
+<td>Nethrasri R</td>
+</tr>
+<tr>
+<td>Nithin R</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Roslin Jeronshiya D</td>
+<td colspan="1" rowspan="4">
+<div>Chettinad College Of Engineering And Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Karur</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Tharanika N</td>
+</tr>
+<tr>
+<td>Hiriseeka N</td>
+</tr>
+<tr>
+<td>Girija R</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Manishankar M</td>
+<td colspan="1" rowspan="5">
+<div>Sri Ramakrishna Engineering College</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Praveen Kumar P</td>
+</tr>
+<tr>
+<td>Vigneshkumar G</td>
+</tr>
+<tr>
+<td>Vishwadharani V</td>
+</tr>
+<tr>
+<td>Rochitha P</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Jayaraj M</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Ashwin R</td>
+</tr>
+<tr>
+<td>Vishal Meyyappan R</td>
+</tr>
+<tr>
+<td>Kishore V S</td>
+</tr>
+<tr>
+<td>Lokesh R</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Manikandan C</td>
+<td colspan="1" rowspan="3">
+<div>Sri Ramakrishna Engineering College</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Dhanayakumar S</td>
+</tr>
+<tr>
+<td>Dhayaan B</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Girija R</td>
+<td colspan="1" rowspan="4">
+<div>Chettinad College Of Engineering And Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Karur</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Hiriseeka N</td>
+</tr>
+<tr>
+<td>Roslin Jeronshiya D</td>
+</tr>
+<tr>
+<td>Tharanika N</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Cynthia C</td>
+<td colspan="1" rowspan="5">
+<div>St. Xavier'S Catholic College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Nagercoil</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Subin.S</td>
+</tr>
+<tr>
+<td>Angelo Vibin.V</td>
+</tr>
+<tr>
+<td>Senthilathieban .A</td>
+</tr>
+<tr>
+<td>Akash S.V</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Mukkamala Sai Varuntej</td>
+<td colspan="1" rowspan="5">
+<div>Raghu Engineering College</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Visakhapatnam</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Andhra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>R.V.M.S.Varun Swamy</td>
+</tr>
+<tr>
+<td>Gompa Jayanth</td>
+</tr>
+<tr>
+<td>Bhagi Praneel Reddy</td>
+</tr>
+<tr>
+<td>Bura Charan Sai</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Saisubramani H S</td>
+<td colspan="1" rowspan="4">
+<div>Sri Sairam Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Iyyneswaran P</td>
+</tr>
+<tr>
+<td>Naugeeth P</td>
+</tr>
+<tr>
+<td>Shubham Kumar</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Prashant Dubey</td>
+<td colspan="1" rowspan="5">
+<div>VIT Bhopal</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Bhopal</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Madhya Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Jihi Mamtani</td>
+</tr>
+<tr>
+<td>Deshna Jain</td>
+</tr>
+<tr>
+<td>Sahil Dalwani</td>
+</tr>
+<tr>
+<td>Palak Choithani</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Shreesh Prateek Pathak</td>
+<td colspan="1" rowspan="3">
+<div>VIT Vellore</div>
+</td>
+<td>Raipur</td>
+<td>Chhattisgarh</td>
+</tr>
+<tr>
+<td>Soumyajit Pal</td>
+<td>Kolkata</td>
+<td>West Bengal</td>
+</tr>
+<tr>
+<td>Hriddhi Biswas</td>
+<td>Agartala</td>
+<td>Tripura</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Vasudev R</td>
+<td colspan="1" rowspan="4">
+<div>Chennai Institiute Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>G Dhiikshanyaa</td>
+</tr>
+<tr>
+<td>Dhanush U</td>
+</tr>
+<tr>
+<td>Kaushick U</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Ravindhar M</td>
+<td colspan="1" rowspan="5">
+<div>Chennai Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Sanjay S</td>
+</tr>
+<tr>
+<td>Ramaprakash B</td>
+</tr>
+<tr>
+<td>Keshav N</td>
+</tr>
+<tr>
+<td>Tamilmani S</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Palaniraj M</td>
+<td colspan="1" rowspan="4">
+<div>Chennai In Institute Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Krisanth M</td>
+</tr>
+<tr>
+<td>Hari Hara Sudhan R</td>
+</tr>
+<tr>
+<td>F Mohamed Zayn Ismail</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Saisubramani H S</td>
+<td colspan="1" rowspan="3">
+<div>Sri Sairam Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Sarvesvar S</td>
+</tr>
+<tr>
+<td>Iyyneswaran P</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Aadidev Raizada</td>
+<td colspan="1" rowspan="4">
+<div>Mukesh Patel School Of Technology Management And Engineering</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Mumbai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Kush Modi</td>
+</tr>
+<tr>
+<td>Pratham Baldewa</td>
+</tr>
+<tr>
+<td>Aadarsh Suryawanshi</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Manikandan R</td>
+<td colspan="1" rowspan="4">
+<div>Loyola-Icam College Of Engineering And Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Chennai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Arun Kumar M P</td>
+</tr>
+<tr>
+<td>Kumudha Shree B</td>
+</tr>
+<tr>
+<td>Jenlin Anne Flora J</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Sarang Patil</td>
+<td colspan="1" rowspan="4">
+<div>SIES Graduate School Of Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Navi Mumbai</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Atharva Bendale</td>
+</tr>
+<tr>
+<td>Ratish Patil</td>
+</tr>
+<tr>
+<td>Amey Khapre</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Padavala Tarun Kumar</td>
+<td colspan="1" rowspan="5">
+<div>Siddhartha Academy Of Higher Education</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Vijayawada</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Andhra Pradesh</div>
+</td>
+</tr>
+<tr>
+<td>Pedaveghi Teja Sai Naga Kumar</td>
+</tr>
+<tr>
+<td>Mudigonda Bharath Kumar</td>
+</tr>
+<tr>
+<td>Tammu Raghava Raju</td>
+</tr>
+<tr>
+<td>Varshitha Yalamarthi</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Tharanika N</td>
+<td colspan="1" rowspan="4">
+<div>Chettinad College Of Engineering And Technology</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Karur</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Girija R</td>
+</tr>
+<tr>
+<td>Hiriseeka N</td>
+</tr>
+<tr>
+<td>Roslin Jeronshiya D</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="3">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Devarth Dubey</td>
+<td colspan="1" rowspan="3">
+<div>Central Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Kokrajhar</div>
+</td>
+<td colspan="1" rowspan="3">
+<div>Assam</div>
+</td>
+</tr>
+<tr>
+<td>Govind Kumar Prajapati</td>
+</tr>
+<tr>
+<td>Antaryami Panigrahi</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="4">
+<div>Healthcare &amp; Assistive Devices</div>
+</td>
+<td>Praveen Kanth P</td>
+<td colspan="1" rowspan="4">
+<div>Sri Eshwar College Of Engineering</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="4">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Navya M</td>
+</tr>
+<tr>
+<td>Kiruthic T</td>
+</tr>
+<tr>
+<td>Mayilpriyan S</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Murugan U</td>
+<td colspan="1" rowspan="5">
+<div>Rajalakshmi Institute Of Technology</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Kanchipuram</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Gnaneshwar R</td>
+</tr>
+<tr>
+<td>Logesh B</td>
+</tr>
+<tr>
+<td>Arjun Em</td>
+</tr>
+<tr>
+<td>Yuvasree P</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="2">
+<div>Smart Campus / Smart City</div>
+</td>
+<td>Bhuvan Bagwe</td>
+<td>Air Calibre</td>
+<td colspan="1" rowspan="2">
+<div>Mumbai</div>
+</td>
+<td colspan="1" rowspan="2">
+<div>Maharashtra</div>
+</td>
+</tr>
+<tr>
+<td>Yash Shah</td>
+<td>D J Sanghvi College Of Engineering</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="5">
+<div>Energy &amp; Sustainability</div>
+</td>
+<td>Aatheesh</td>
+<td colspan="1" rowspan="5">
+<div>Sri Ramakrishna Engineering College</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Coimbatore</div>
+</td>
+<td colspan="1" rowspan="5">
+<div>Tamil Nadu</div>
+</td>
+</tr>
+<tr>
+<td>Vijayabharathi N</td>
+</tr>
+<tr>
+<td>Kowshikan A</td>
+</tr>
+<tr>
+<td>Vishnu Varthan S</td>
+</tr>
+<tr>
+<td>Gowri Shankar R</td>
+</tr>
+</tbody>
+</table>
+`);
